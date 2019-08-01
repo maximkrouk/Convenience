@@ -1,0 +1,22 @@
+{
+  "name": "Convenience",
+  "version": "0.1.0",
+  "summary": "A short description of Convenience.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Maxim Krouk/Convenience",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Maxim Krouk": "id.maximkrouk@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Maxim Krouk/Convenience.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Convenience/Classes/**/*"
+}
