@@ -16,6 +16,7 @@
 		D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9759FDFA398CC8DC0A59765966C5848 /* Convenience-dummy.m */; };
 		D6E9597D49B911F93870BBAFB1F8EDA5 /* Pods-Convenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
+		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
 		FF4134400991AE360DA46A5338CA000D /* Convenience-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD4E2B96D7418E52105C13509EB744FA /* Convenience-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		E14C60D9FA4AB212C34D0F4530CA896F /* Pods-Convenience_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Convenience_Tests-dummy.m"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
+		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
 		E1F82EAC22F395FB008C2D13 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		E4E9002499713FA0D5A946AF9D841E6A /* Convenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Convenience.modulemap; sourceTree = "<group>"; };
 		F5D508418609E252D04206958A41B6A0 /* Pods-Convenience_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Convenience_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1ECB43422F4931D004ACB9F /* Guidlines */ = {
+			isa = PBXGroup;
+			children = (
+				E1ECB43522F49331004ACB9F /* git.style.spec.md */,
+			);
+			path = Guidlines;
+			sourceTree = "<group>";
+		};
 		E1F82EA622F39542008C2D13 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 		F98261C9B23C9AE174B9D045948CA77A /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
+				E1ECB43422F4931D004ACB9F /* Guidlines */,
 				E1F82EA622F39542008C2D13 /* Sources */,
 				C44D999A7C875AFD0B6363FCD898DA61 /* Pod */,
 				84405051460C66E7F7B0FDCEE2C7A169 /* Support Files */,
@@ -386,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
