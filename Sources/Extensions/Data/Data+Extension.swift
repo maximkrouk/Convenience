@@ -9,5 +9,5 @@
 import Foundation
 
 extension Data {
-    func string(_ encoding: String.Encoding) -> String? { String(data: self, encoding: encoding) }
+    func string(using encoding: String.Encoding) -> String? { String(data: self, encoding: encoding) }
 }

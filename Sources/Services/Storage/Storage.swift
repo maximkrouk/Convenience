@@ -5,4 +5,4 @@
 //  Created by Maxim Krouk on 8/3/19.
 //
 
-struct Storage {}
+public struct Storage {}
