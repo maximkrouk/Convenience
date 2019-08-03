@@ -232,6 +232,27 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		E17E86C822F5A4BA00102D0E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E17E86C922F5A4C600102D0E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E17E86CB22F5A4D000102D0E /* RawRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RawRepresentable;
+			sourceTree = "<group>";
+		};
 		E1ECB43422F4931D004ACB9F /* Guidlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +266,7 @@
 			children = (
 				E1F82EAC22F395FB008C2D13 /* Operators.swift */,
 				E17C169C22F59267005BA34A /* Services */,
+				E17E86C822F5A4BA00102D0E /* Classes */,
 				E1F82EA722F39559008C2D13 /* Extensions */,
 			);
 			path = Sources;
@@ -253,6 +275,8 @@
 		E1F82EA722F39559008C2D13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E17E86CB22F5A4D000102D0E /* RawRepresentable */,
+				E17E86C922F5A4C600102D0E /* Data */,
 				E1F82EA922F395C1008C2D13 /* Optional */,
 			);
 			path = Extensions;
