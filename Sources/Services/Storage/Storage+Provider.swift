@@ -56,7 +56,7 @@ public extension Storage {
             debugPrint("You should implement `public func set(_ value: T?, forKey key: String) -> AFResult<Void>`")
             debugPrint("for `Storage.Provider where T == \(T.self)`")
             debugPrint("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––")
-            return .failure(.init(localizedDescription: "The operation is not avalible."))
+            return .failure(PlainError(localizedDescription: "The operation is not avalible."))
         }
 
         @available(*, deprecated, message: "Use delete(for:) method instead.")

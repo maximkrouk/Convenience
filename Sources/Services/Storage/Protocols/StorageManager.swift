@@ -44,6 +44,6 @@ public protocol StorageManager: class {
 extension StorageManager {
     func clear() -> AFResult<Void> {
         debugPrint("Error: call of not implemented StorageManager.clear() method.")
-        return .failure(.init(localizedDescription: "The operation is not avalible."))
+        return .failure(PlainError(localizedDescription: "The operation is not avalible."))
     }
 }

@@ -23,8 +23,14 @@
 		E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86D822F6271E00102D0E /* Storage+Provider.swift */; };
 		E17E86DE22F6271E00102D0E /* PlainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86DD22F6271E00102D0E /* PlainError.swift */; };
 		E17E86E322F642DE00102D0E /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86E222F642DE00102D0E /* StorageProvider.swift */; };
-		E17E86F222F653E300102D0E /* CFString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CFString+Extension.swift */; };
-		E17E86F522F6543800102D0E /* CFBoolean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F422F6543800102D0E /* CFBoolean+Extension.swift */; };
+		E17E86FC22F656D700102D0E /* Keychain+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F722F656D700102D0E /* Keychain+Constants.swift */; };
+		E17E86FD22F656D700102D0E /* Storage+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F822F656D700102D0E /* Storage+Keychain.swift */; };
+		E17E86FE22F656D700102D0E /* Keychain+AccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F922F656D700102D0E /* Keychain+AccessOptions.swift */; };
+		E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86FA22F656D700102D0E /* Keychain+Error.swift */; };
+		E17E870022F656D700102D0E /* Keychain+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86FB22F656D700102D0E /* Keychain+Result.swift */; };
+		E17E870122F6570200102D0E /* CFString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CFString+Extension.swift */; };
+		E17E870222F6570600102D0E /* CFBoolean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F422F6543800102D0E /* CFBoolean+Extension.swift */; };
+		E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870322F657DD00102D0E /* Bool+Extension.swift */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
@@ -84,6 +90,12 @@
 		E17E86E222F642DE00102D0E /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		E17E86F122F653E300102D0E /* CFString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFString+Extension.swift"; sourceTree = "<group>"; };
 		E17E86F422F6543800102D0E /* CFBoolean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFBoolean+Extension.swift"; sourceTree = "<group>"; };
+		E17E86F722F656D700102D0E /* Keychain+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keychain+Constants.swift"; sourceTree = "<group>"; };
+		E17E86F822F656D700102D0E /* Storage+Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storage+Keychain.swift"; sourceTree = "<group>"; };
+		E17E86F922F656D700102D0E /* Keychain+AccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keychain+AccessOptions.swift"; sourceTree = "<group>"; };
+		E17E86FA22F656D700102D0E /* Keychain+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keychain+Error.swift"; sourceTree = "<group>"; };
+		E17E86FB22F656D700102D0E /* Keychain+Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Keychain+Result.swift"; sourceTree = "<group>"; };
+		E17E870322F657DD00102D0E /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
@@ -248,6 +260,7 @@
 				E17E86CC22F5A64500102D0E /* Storage.swift */,
 				E17E86D822F6271E00102D0E /* Storage+Provider.swift */,
 				E17E86CE22F6270600102D0E /* Protocols */,
+				E17E86F622F656D700102D0E /* Keychain */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -314,8 +327,21 @@
 			isa = PBXGroup;
 			children = (
 				E17E86F422F6543800102D0E /* CFBoolean+Extension.swift */,
+				E17E870322F657DD00102D0E /* Bool+Extension.swift */,
 			);
 			path = Bool;
+			sourceTree = "<group>";
+		};
+		E17E86F622F656D700102D0E /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				E17E86F822F656D700102D0E /* Storage+Keychain.swift */,
+				E17E86F722F656D700102D0E /* Keychain+Constants.swift */,
+				E17E86F922F656D700102D0E /* Keychain+AccessOptions.swift */,
+				E17E86FB22F656D700102D0E /* Keychain+Result.swift */,
+				E17E86FA22F656D700102D0E /* Keychain+Error.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		E1ECB43422F4931D004ACB9F /* Guidlines */ = {
@@ -537,14 +563,20 @@
 				E17E86D022F6271E00102D0E /* StorageManager.swift in Sources */,
 				E17E86E322F642DE00102D0E /* StorageProvider.swift in Sources */,
 				D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */,
+				E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */,
+				E17E870122F6570200102D0E /* CFString+Extension.swift in Sources */,
+				E17E86FD22F656D700102D0E /* Storage+Keychain.swift in Sources */,
+				E17E86FC22F656D700102D0E /* Keychain+Constants.swift in Sources */,
 				E17E86DE22F6271E00102D0E /* PlainError.swift in Sources */,
+				E17E870022F656D700102D0E /* Keychain+Result.swift in Sources */,
 				E17E86CD22F5A64500102D0E /* Storage.swift in Sources */,
+				E17E870222F6570600102D0E /* CFBoolean+Extension.swift in Sources */,
 				E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */,
+				E17E86FE22F656D700102D0E /* Keychain+AccessOptions.swift in Sources */,
 				E17C16AC22F59406005BA34A /* Data+Extension.swift in Sources */,
-				E17E86F222F653E300102D0E /* CFString+Extension.swift in Sources */,
 				E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */,
+				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,
 				E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */,
-				E17E86F522F6543800102D0E /* CFBoolean+Extension.swift in Sources */,
 				E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */,
 				E17C16A922F59381005BA34A /* AFResult.swift in Sources */,
 			);

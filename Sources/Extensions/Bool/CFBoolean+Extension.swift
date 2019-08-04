@@ -9,5 +9,5 @@ import Foundation
 import Security
 
 public extension CFBoolean {
-    var bool: Bool { self as Bool }
+    var bool: Bool { self == kCFBooleanTrue }
 }
