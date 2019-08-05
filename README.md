@@ -30,22 +30,22 @@ In exaples I'll be using this:
 
 ```swift
 enum Auth: String {
-    case username
-    case isAdmin
+    case username // .rawValue == "username"
+    case isAdmin  // .rawValue == "isAdmin"
 }
 ```
 
 Avalible **Managers:**
 
-- Keychain
+- `Keychain`
 
   _Shortcut: KC_
 
-- UserDefaults
+- `UserDefaults`
 
   _Shortcut: UD_
 
-- Cache [temporary / presistant]
+- `Cache` [temporary / presistant]
 
   _Shortcut: CH_
 
@@ -62,9 +62,9 @@ You should access any storage via providers. You may use them as static or singl
 
 Out-of-the-box **Providers:**
 
-- data
-- bool
-- string
+- `.data`
+- `.bool`
+- `.string`
 
 _(More will be provided soon)_
 
@@ -84,9 +84,9 @@ For convenience it would be nice to extend framework's `Storage.Provider` with y
 
 ```swift
 extension Storage.Provider {
-    subscript(key: Auth) -> Value? {
-        get { get(for: key) }
-        set { set(newValue, for: key) }
+    subscript(key: Auth) -> Value? {    // Value is a Provider's assosiated type.
+        get { get(for: key) }           // Just pass key to build-in getter,
+        set { set(newValue, for: key) } // or key-value to build in setter.
     }
 }
 ```
