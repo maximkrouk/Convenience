@@ -72,6 +72,6 @@ private extension Storage.Cache.Presistant {
                              create: false)
     }
     
-    func url(for key: String) -> URL { directory.appendingPathComponent("(key).tmp") }
+    func url(for key: String) -> URL { directory.appendingPathComponent("(key).tmp", isDirectory: false) }
     
 }
