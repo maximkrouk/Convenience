@@ -112,7 +112,7 @@ public extension Storage.Provider where T == Bool {
     @discardableResult
     func set(_ value: T?, forKey key: String) -> AFResult<Void> {
         if let value = value {
-            return storage.save(data: Data([value ? 1 : 0]), forKey: key)
+            return storage.save(data: value.data, forKey: key)
         }
         else { return delete(forKey: key) }
     }

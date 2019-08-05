@@ -8,5 +8,5 @@
 import Foundation
 
 extension Bool {
-    var cfBool: CFBoolean { self ? kCFBooleanTrue : kCFBooleanFalse }
+    var data: Data { Data([self ? 1 : 0]) }
 }

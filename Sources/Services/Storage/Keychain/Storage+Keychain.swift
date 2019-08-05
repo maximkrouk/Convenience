@@ -174,8 +174,8 @@ public extension Storage {
                     Constants.Key.matchLimit.value : kSecMatchLimitOne
                 ]
                 
-                if asReference { query[Constants.Key.persistentRef.value] = true.cfBool }
-                else { query[Constants.Key.returnData.value] =  true.cfBool }
+                if asReference { query[Constants.Key.persistentRef.value] = true.cfBoolean }
+                else { query[Constants.Key.returnData.value] =  true.cfBoolean }
                 
                 if let group = accessGroup { query.addAccessGroup(group) }
                 if isSynchronizable { query.addSynchronizability(value: false) }

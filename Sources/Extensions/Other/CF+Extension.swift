@@ -15,3 +15,7 @@ public extension CFString {
 public extension CFBoolean {
     var bool: Bool { self == kCFBooleanTrue }
 }
+
+extension Bool {
+    var cfBoolean: CFBoolean { self ? kCFBooleanTrue : kCFBooleanFalse }
+}
