@@ -54,10 +54,10 @@ public extension Storage {
         public static var data: Provider<Data> { Keychain.default.data }
         
         /// Returns `Keychain.default.bool` instance.
-        public static var bool: Provider<Data> { Keychain.default.data }
+        public static var bool: Provider<Bool> { Keychain.default.bool }
         
         /// Returns `Keychain.default.string` instance.
-        public static var string: Provider<Data> { Keychain.default.data }
+        public static var string: Provider<String> { Keychain.default.string }
         
         /// Contains result code from the last operation.
         ///
