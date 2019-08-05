@@ -8,6 +8,7 @@
 import Foundation
 
 extension Storage.Keychain {
+    
     struct Error: Swift.Error {
         let code: OSStatus?
         let customDescription: String? = .none
@@ -16,4 +17,5 @@ extension Storage.Keychain {
             return "Keychain error. OSStatus code: \(code)"
         }
     }
+    
 }

@@ -12,7 +12,6 @@ public extension Storage.Keychain {
 
     /// Options, used to determine keychain item access. The default value is accessibleWhenUnlocked.
     enum AccessOption {
-        
         /// Default access option.
         ///
         /// Returns: .accessibleWhenUnlocked
@@ -84,6 +83,6 @@ public extension Storage.Keychain {
                     return kSecAttrAccessibleAlwaysThisDeviceOnly
             }
         }
-        
     }
+    
 }

@@ -9,6 +9,7 @@ import Foundation
 
 
 public extension Storage {
+    
     class Provider<T>: StorageProvider {
         private weak var storage: StorageManager!
         public init(storageProvider: StorageManager) {
@@ -62,8 +63,8 @@ public extension Storage {
         @available(*, deprecated, message: "Use delete(for:) method instead.")
         @discardableResult
         public func delete(forKey key: String) -> AFResult<Void> { storage.delete(key: key) }
-        
     }
+    
 }
 
 public extension Storage.Provider where T == Data {

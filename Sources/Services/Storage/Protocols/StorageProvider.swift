@@ -121,4 +121,5 @@ public protocol StorageProvider {
     @available(*, deprecated, message: "Use delete(for:) method instead.")
     @discardableResult
     func delete(forKey key: String) -> AFResult<Void>
+    
 }
