@@ -23,3 +23,9 @@ public extension Regex {
         return firstMatch(in: string, options: [], range: range) != nil
     }
 }
+
+public extension Regex {
+    static var color: Regex {
+        "#{0,1}[0-9A-F]{6}".regex(.caseInsensitive)
+    }
+}
