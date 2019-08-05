@@ -16,6 +16,7 @@
 		CED25D8F22F83B9B003B44BA /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D8E22F83B9B003B44BA /* Validator.swift */; };
 		CED25D9422F83FD9003B44BA /* Validator+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9322F83FBD003B44BA /* Validator+String.swift */; };
 		CED25D9822F84E8E003B44BA /* Storage+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */; };
+		CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25DA022F85BAA003B44BA /* Storage+Cache.swift */; };
 		CF65C6F113441D2EA3B72BAFC248EE86 /* Pods-Convenience_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E14C60D9FA4AB212C34D0F4530CA896F /* Pods-Convenience_Tests-dummy.m */; };
 		D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9759FDFA398CC8DC0A59765966C5848 /* Convenience-dummy.m */; };
 		D6E9597D49B911F93870BBAFB1F8EDA5 /* Pods-Convenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +89,7 @@
 		CED25D8E22F83B9B003B44BA /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = ../../../../../../Validator.swift; sourceTree = "<group>"; };
 		CED25D9322F83FBD003B44BA /* Validator+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validator+String.swift"; sourceTree = "<group>"; };
 		CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+UserDefaults.swift"; sourceTree = "<group>"; };
+		CED25DA022F85BAA003B44BA /* Storage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Cache.swift"; sourceTree = "<group>"; };
 		CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Convenience_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D27219376A6A229ECC135C0DE0E4490A /* Pods-Convenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Convenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC41746E1399C475380E3247859C9ED /* Convenience.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Convenience.xcconfig; sourceTree = "<group>"; };
@@ -279,6 +281,14 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		CED25D9F22F85B9B003B44BA /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CED25DA022F85BAA003B44BA /* Storage+Cache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,7 @@
 				E17E86CE22F6270600102D0E /* Protocols */,
 				E17E86F622F656D700102D0E /* Keychain */,
 				CED25D9622F84E6B003B44BA /* UserDefaults */,
+				CED25D9F22F85B9B003B44BA /* Cache */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -675,6 +686,7 @@
 				E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */,
 				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,
 				E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */,
+				CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */,
 				E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */,
 				E1303A9E22F7762900DE9CAC /* UIColor+Convert.swift in Sources */,
 				E17C16A922F59381005BA34A /* AFResult.swift in Sources */,
