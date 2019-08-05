@@ -186,7 +186,7 @@ public extension Storage {
                 }
                 
                 if let data = result as? Data { return .success(data) }
-                else { return .failure(PlainError(localizedDescription: "Couldn't fetch data from the keychain."))}
+                else { return .failure(PlainError(description: "Couldn't fetch data from the keychain."))}
             }
         }
         
