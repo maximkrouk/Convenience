@@ -9,10 +9,10 @@ import Foundation
 
 public extension Storage {
     
-    final class Cache: StorageManager {
-        private let standard = NSCache<NSString, Item>()
+    final class Cache {
+        public let kind: Kind
         
-        public static let `default` = Cache()
+        public static let `default` = Cache(.memory)
         
         /// Returns `Cache.default.data` instance.
         public static var data: Provider<Data> { Cache.default.data }
@@ -32,11 +32,24 @@ public extension Storage {
         /// Use this instance to store and access String keychain items.
         private (set) public var string: Provider<String>!
         
-        public init() {
-            self.data   = .init(storageProvider: self)
-            self.bool   = .init(storageProvider: self)
-            self.string = .init(storageProvider: self)
+        public init(_ kind: Kind) {
+            self.kind   =  kind
+            let storageProvider = kind == .memory ? Temporary.default : Temporary.default
+            self.data   = .init(storageProvider: storageProvider)
+            self.bool   = .init(storageProvider: storageProvider)
+            self.string = .init(storageProvider: storageProvider)
         }
+        
+
+    }
+    
+}
+
+public extension Storage.Cache {
+    
+    class Temporary: StorageManager {
+        private let standard = NSCache<NSString, Item>()
+        public static let `default` = Temporary()
         
         public func data(forKey key: String) -> AFResult<Data> {
             guard let data = standard.object(forKey: key.nsString)?.content else {
@@ -59,13 +72,20 @@ public extension Storage {
             standard.removeAllObjects()
             return .success(())
         }
+        
+        class Item {
+            var content: Data
+            init(content: Data) { self.content = content }
+        }
     }
     
 }
 
-private extension Storage.Cache {
-    class Item {
-        var content: Data
-        init(content: Data) { self.content = content }
+
+
+public extension Storage.Cache {
+    enum Kind {
+        case memory
+        case storage
     }
 }
