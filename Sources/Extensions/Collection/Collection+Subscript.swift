@@ -9,7 +9,8 @@ import Foundation
 
 public extension Collection {
     
-    var lastIndex: Int { isEmpty ? 0 : count - 1 }
+    /// Returns the amounnt of elements, when counting from zero or nil if the collection is empty.
+    var lastIndex: Int? { isEmpty ? nil : count - 1 }
     
     subscript(safe index: Index) -> Element? {
         indices.contains(index) ? self[index] : nil

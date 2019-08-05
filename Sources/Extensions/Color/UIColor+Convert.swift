@@ -9,6 +9,7 @@ import UIKit
 
 extension UIColor {
     
+    /// Creates a new UIColor instance from hex representation.
     public convenience init?(hex: String) {
         guard Regex.color.matches(hex) else { return nil }
         let color = hex.replacingOccurrences(of: "#", with: "")

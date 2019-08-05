@@ -8,6 +8,9 @@
 
 extension RawRepresentable {
     
+    /// RawValue getter.
+    ///
+    /// - Returns: rawValue of the parameter.
     static postfix func ~(lhs: Self) -> RawValue { lhs.rawValue }
     
 }

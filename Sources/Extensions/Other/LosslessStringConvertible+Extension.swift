@@ -9,6 +9,7 @@ import Foundation
 
 extension LosslessStringConvertible {
     
+    /// Returns an instance of String initialized with self.
     var string: String { .init(self) }
     
 }

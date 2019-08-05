@@ -11,7 +11,7 @@ import Security
 public extension Storage.Keychain {
     
     struct Result {
-        /// Result code. Equal to noErr (0) if operation succseed.
+        /// Result code. Equal to noErr (0) if operation succeed.
         public var code: OSStatus
         
         /// Creates a new instance.

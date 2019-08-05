@@ -8,8 +8,6 @@
 
 import Foundation
 
-import UIKit
-
 public extension Optional {
     
     /// Sets object to nil.

@@ -61,7 +61,7 @@ public extension Storage {
         
         /// Contains result code from the last operation.
         ///
-        /// If code is noErr (0) the operation succseed.
+        /// If code is noErr (0) the operation succeed.
         private(set) public var lastResult: Result = .init()
 
         /// A prefix that is added before the key.
