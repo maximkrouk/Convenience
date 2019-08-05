@@ -7,15 +7,13 @@
 
 import Foundation
 
-public extension Storage.Cache {
+extension Storage.Cache {
     
     class Presistant: StorageManager {
         private let fileManager = FileManager.default
         public var directory: URL {
             cacheDirectory.appendingPathComponent("./\(Bundle.main.bundleIdentifier.unwrap(default: "ConvenienceTempDir"))")
         }
-        
-        public static let `default` = Presistant()
         
         public init() {
             if !fileManager.fileExists(atPath: directory.path) {
@@ -65,7 +63,7 @@ public extension Storage.Cache {
     
 }
 
-extension Storage.Cache.Presistant {
+private extension Storage.Cache.Presistant {
     
     var cacheDirectory: URL {
         try! fileManager.url(for: .cachesDirectory,

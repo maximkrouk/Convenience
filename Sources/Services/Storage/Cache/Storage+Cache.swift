@@ -33,11 +33,11 @@ public extension Storage {
         private (set) public var string: Provider<String>!
         
         public init(_ kind: Kind) {
+            let storage: StorageManager = kind == .memory ? Temporary() : Presistant()
             self.kind   =  kind
-            let storageProvider: StorageManager = kind == .memory ? Temporary.default : Presistant.default
-            self.data   = .init(storageProvider: storageProvider)
-            self.bool   = .init(storageProvider: storageProvider)
-            self.string = .init(storageProvider: storageProvider)
+            self.data   = .init(storage: storage)
+            self.bool   = .init(storage: storage)
+            self.string = .init(storage: storage)
         }
     }
     

@@ -7,11 +7,10 @@
 
 import Foundation
 
-public extension Storage.Cache {
+extension Storage.Cache {
     
     class Temporary: StorageManager {
         private let standard = NSCache<NSString, Item>()
-        public static let `default` = Temporary()
         
         public func data(forKey key: String) -> AFResult<Data> {
             guard let data = standard.object(forKey: key.nsString)?.content else {

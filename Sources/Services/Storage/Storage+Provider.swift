@@ -12,8 +12,8 @@ public extension Storage {
     
     class Provider<T>: StorageProvider {
         private weak var storage: StorageManager!
-        public init(storageProvider: StorageManager) {
-            self.storage = storageProvider
+        public init(storage: StorageManager) {
+            self.storage = storage
         }
         
         public subscript<Key: RawRepresentable>(_ key: Key) -> T? where Key.RawValue == String {
