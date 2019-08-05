@@ -36,6 +36,8 @@ fileprivate extension Storage.Keychain.Query {
 
 public extension Storage {
     
+    typealias KC = Keychain
+    
     final class Keychain: StorageManager {
         
         typealias Query = Dictionary<String, Any>
