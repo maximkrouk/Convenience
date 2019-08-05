@@ -15,6 +15,15 @@ public extension Storage {
         
         public static let `default` = UserDefaults()
         
+        /// Returns `UserDefaults.default.data` instance.
+        public static var data: Provider<Data> { UserDefaults.default.data }
+        
+        /// Returns `UserDefaults.default.bool` instance.
+        public static var bool: Provider<Bool> { UserDefaults.default.bool }
+        
+        /// Returns `UserDefaults.default.string` instance.
+        public static var string: Provider<String> { UserDefaults.default.string }
+        
         /// Use this instance to store and access Data keychain items.
         private(set) public var data: Provider<Data>!
         
