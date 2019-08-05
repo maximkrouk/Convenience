@@ -9,14 +9,23 @@
 import UIKit
 import Convenience
 
+enum Auth: String {
+    case username
+    case isAdmin
+}
+
+extension Storage.Provider {
+    subscript(key: Auth) -> Value? {
+        get { get(for: key) }
+        set { set(newValue, for: key) }
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Storage.UserDefaults.default.bool
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        Storage.Keychain.default.bool[.isAdmin] = true
     }
 
     override func didReceiveMemoryWarning() {
