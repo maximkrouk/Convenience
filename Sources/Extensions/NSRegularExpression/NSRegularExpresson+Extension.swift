@@ -35,7 +35,70 @@ public extension Regex {
 
 public extension Regex {
     
+    /// Returns regex that matches any non empty string,
+    ///
+    /// - Expression string: "`.*`"
+    static var nonEmpty: Regex { ".*".regex() }
+    
+    /// Returns regex that matches letter strings only,
+    ///
+    /// - Expression string: "`[A-Z]*`"
+    /// - Flags: `[.caseInsensitive]`
+    static var letters: Regex { "[A-Z]*".regex(.caseInsensitive) }
+
+    /// Returns regex that matches digital strings only,
+    ///
+    /// - Expression string: "`[0-9]*`"
+    static var digits: Regex { "[0-9]*".regex() }
+    
+    /// Returns regex that matches binary strings only,
+    ///
+    /// - Expression string: "`[0-1]*`"
+    static var binary: Regex { "[0-1]*".regex() }
+
+    /// Returns regex that matches uppercased strings only,
+    ///
+    /// - Expression string: "`[A-Z]*`"
+    static var uppercased: Regex { "[A-Z]*".regex() }
+
+    /// Returns regex that matches lowercased strings only,
+    ///
+    /// - Expression string: "`[a-z]*`"
+    static var lowercased: Regex { "[a-z]*".regex() }
+
+    /// Returns regex that matches letter-digital strings only,
+    ///
+    /// - Expression string: "`[0-9A-Z]*`:
+    /// - Flags: `[.caseInsensitive]`
+    static var lettersAndDigits: Regex { "[0-9A-Z]*".regex(.caseInsensitive) }
+
+    /// Returns regex that matches uppercased letter-digital string only,
+    ///
+    /// - Expression string: "`[0-9A-Z]*`"
+    static var uppercasedAndDigits: Regex { "[0-9A-Z]*".regex() }
+
+    /// Returns regex that matches lowercased letter-digital string only,
+    ///
+    /// - Expression string: "`[0-9a-z]*`"
+    static var lowercasedAndDigits: Regex { "[0-9a-z]*".regex() }
+    
     /// Returns regex for hex color representation. (With or without one leading "#")
+    ///
+    /// - Expression string: "`#{0,1}[0-9A-F]{6}`"
+    /// - Flags: `[.caseInsensitive]`
     static var color: Regex { "#{0,1}[0-9A-F]{6}".regex(.caseInsensitive) }
+
+    /// Returns regex for email. (Taken from [here](https://emailregex.com))
+    ///
+    /// - Expression string: "`[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,64}`"
+    /// - Flags: `[.caseInsensitive]`
+    static var email: Regex { "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,64}".regex(.caseInsensitive) }
+
+    /// Returns regex for email. (Taken from [here](https://www.regextester.com/22))
+    ///
+    /// - Expression string: "`^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`"
+    static var ipv4: Regex {
+        "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$".regex()
+    }
     
 }
