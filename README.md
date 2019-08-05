@@ -1,6 +1,6 @@
 # Convenience
 
-__The most convenient framework for your apps.__
+**The most convenient framework for your apps.**
 
 [![CI Status](https://img.shields.io/travis/Maxim Krouk/Convenience.svg?style=flat)](https://travis-ci.org/Maxim Krouk/Convenience) [![Version](https://img.shields.io/cocoapods/v/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![License](https://img.shields.io/cocoapods/l/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![Platform](https://img.shields.io/cocoapods/p/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience)
 
@@ -20,9 +20,9 @@ Every type of storage:
 
 - Has the same interface.
 - Extendable.
-- Thread safe (exept of Permanent cache, thread safety for this cache will be provided later.)
+- Thread safe (exept of Permanent cache, thread safety for this cache will be provided soon.)
 
-**Interface**:
+#### Interface:
 
 Any storage provided via managers is accessible as key-value pairs. You may use strings, but you'll be getting warnings, because I deprecated this approach. Natively the framework advices you to use string based enums.
 
@@ -35,18 +35,32 @@ enum Auth: String {
 }
 ```
 
-Avalible managers:
+Avalible **Managers:**
 
 - Keychain
+
+  _Shortcut: KC_
+
 - UserDefaults
+
+  _Shortcut: UD_
+
 - Cache [temporary / presistant]
+
+  _Shortcut: CH_
+
+You can easily extend Avalible managers with your own, for example **Database:**
+
+```
+Example will be here. (or somewhere else, for now just a placeholder) c:
+```
 
 You should access any storage via providers. You may use them as static or singleton's properties.
 
 - `Storage.[Manager].[Provider]`
 - `Storage.[Manager].default.[Provider]`
 
-Out-of-the-box providers:
+Out-of-the-box **Providers:**
 
 - data
 - bool
@@ -54,7 +68,19 @@ Out-of-the-box providers:
 
 _(More will be provided soon)_
 
-For convenience it would be nice to extend a framework's `Storage.Provider` with your custom adapters:
+**Providers** allow you to access storage:
+
+- Via subscripts:
+  - `provider[key]`
+- Via methods:
+  - `provider.get(for: key)`
+  - `provider.set(value, for: key)`
+- Via deprecated subscripts and methods:
+  - `provider[stringKey]`
+  - `provider.get(forKey: stringKey)`
+  - `provider.set(value, forKey: stringKey)`
+
+For convenience it would be nice to extend framework's `Storage.Provider` with your custom adapter subscripts:
 
 ```swift
 extension Storage.Provider {
@@ -65,14 +91,23 @@ extension Storage.Provider {
 }
 ```
 
+This will allow you to access storage not just like this:
 
+- `Storage.[Manager].[Provider][Auth.username]`
 
-#### Keychain
+but also like this:
 
-- `Storage.Keychain.data["You may use strings"] = "But better not c:".data(using: .utf8)`
+- `Storage.[Manager].[Provider][.username]`
 
-- `Storage.Keychain.default.string[.username] = "SuperUser"`
-- `Storage.KC.bool[.isAdmin] = true`
+#### Keychain as an example:
+
+- `Storage.Keychain.data.set(nil, forKey: "deletedItem")`
+- `Storage.Keychain.data.get(forKey: "deletedItem") // nil`
+
+- `Storage.Keychain.data["StringKeys"] = "Sucks c:".data(using: .utf8)`
+- `Storage.Keychain.default.string[.username] = "Root"`
+- `Storage.Keychain.default.bool[.isAdmin] = true`
+- `Storage.KC.bool[.isAdmin] // true`
 
 ----
 
