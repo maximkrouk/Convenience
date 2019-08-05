@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol StorageManager: class {
+    
     /// Loads data from storage for the specified key.
     ///
     /// Note: Completion parameter can be escaping, so be careful with your capture lists.
@@ -35,15 +36,20 @@ public protocol StorageManager: class {
     
     /// Deletes all the application data from the storage.
     ///
+    /// Warning: may be not implemented.
+    ///
     /// Note: Completion parameter can be escaping, so be careful with your capture lists.
     ///
     /// - Returns: .success if the operation was successfull, .failure otherwise.
     func clear() -> AFResult<Void>
+    
 }
 
 extension StorageManager {
-    func clear() -> AFResult<Void> {
+    
+    public func clear() -> AFResult<Void> {
         debugPrint("Error: call of not implemented StorageManager.clear() method.")
         return .failure(PlainError(description: "The operation is not avalible."))
     }
+    
 }
