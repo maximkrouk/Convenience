@@ -45,6 +45,7 @@ public extension Storage {
 
 public extension Storage.Cache {
     
+    /// Specifies a place where data will be stored.
     enum Kind {
         case memory
         case storage
@@ -54,6 +55,7 @@ public extension Storage.Cache {
 
 extension Storage.Cache {
     
+    /// A wrapper for data.
     class Item {
         var content: Data
         init(content: Data) { self.content = content }
