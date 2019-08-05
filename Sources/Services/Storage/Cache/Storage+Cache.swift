@@ -34,58 +34,26 @@ public extension Storage {
         
         public init(_ kind: Kind) {
             self.kind   =  kind
-            let storageProvider = kind == .memory ? Temporary.default : Temporary.default
+            let storageProvider: StorageManager = kind == .memory ? Temporary.default : Presistant.default
             self.data   = .init(storageProvider: storageProvider)
             self.bool   = .init(storageProvider: storageProvider)
             self.string = .init(storageProvider: storageProvider)
         }
         
-
     }
     
 }
-
-public extension Storage.Cache {
-    
-    class Temporary: StorageManager {
-        private let standard = NSCache<NSString, Item>()
-        public static let `default` = Temporary()
-        
-        public func data(forKey key: String) -> AFResult<Data> {
-            guard let data = standard.object(forKey: key.nsString)?.content else {
-                return .failure(PlainError("No data found for key: [\(key)]"))
-            }
-            return .success(data)
-        }
-                
-        public func save(data: Data, forKey key: String) -> AFResult<Void> {
-            standard.setObject(.init(content: data), forKey: key.nsString)
-            return .success(())
-        }
-                
-        public func delete(key: String) -> AFResult<Void> {
-            standard.removeObject(forKey: key.nsString)
-            return .success(())
-        }
-        
-        public func clear() -> AFResult<Void> {
-            standard.removeAllObjects()
-            return .success(())
-        }
-        
-        class Item {
-            var content: Data
-            init(content: Data) { self.content = content }
-        }
-    }
-    
-}
-
-
 
 public extension Storage.Cache {
     enum Kind {
         case memory
         case storage
+    }
+}
+
+extension Storage.Cache {
+    class Item {
+        var content: Data
+        init(content: Data) { self.content = content }
     }
 }

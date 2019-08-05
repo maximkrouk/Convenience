@@ -23,7 +23,8 @@ public protocol StorageManager: class {
     ///
     /// - Parameter data: Data object to be saved.
     /// - Parameter key: Stored value will be accessable by this key.
-    /// - Returns: .success if the operation was successfull, .failure otherwise. 
+    /// - Returns: .success if the operation was successfull, .failure otherwise.
+    @discardableResult
     func save(data: Data, forKey key: String) -> AFResult<Void>
     
     /// Deletes stored data for the specified key.
@@ -32,6 +33,7 @@ public protocol StorageManager: class {
     ///
     /// - Parameter key: Used to find data to delete.
     /// - Returns: .success if the operation was successfull, .failure otherwise.
+    @discardableResult
     func delete(key: String) -> AFResult<Void>
     
     /// Deletes all the application data from the storage.
@@ -41,6 +43,7 @@ public protocol StorageManager: class {
     /// Note: Completion parameter can be escaping, so be careful with your capture lists.
     ///
     /// - Returns: .success if the operation was successfull, .failure otherwise.
+    @discardableResult
     func clear() -> AFResult<Void>
     
 }
