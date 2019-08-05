@@ -7,5 +7,7 @@
 //
 
 extension RawRepresentable {
+    
     static postfix func ~(lhs: Self) -> RawValue { lhs.rawValue }
+    
 }

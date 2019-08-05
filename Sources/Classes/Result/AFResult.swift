@@ -32,6 +32,7 @@ import Foundation
 /// - failure: The request encountered an error resulting in a failure. The associated values are the original data
 ///            provided by the server as well as the error that caused the failure.
 public enum AFResult<Value> {
+    
     case success(Value)
     case failure(Error)
     
@@ -69,11 +70,13 @@ public enum AFResult<Value> {
             return error
         }
     }
+    
 }
 
 // MARK: - CustomStringConvertible
 
 extension AFResult: CustomStringConvertible {
+    
     /// The textual representation used when written to an output stream, which includes whether the result was a
     /// success or failure.
     public var description: String {
@@ -84,11 +87,13 @@ extension AFResult: CustomStringConvertible {
             return "FAILURE"
         }
     }
+    
 }
 
 // MARK: - CustomDebugStringConvertible
 
 extension AFResult: CustomDebugStringConvertible {
+    
     /// The debug textual representation used when written to an output stream, which includes whether the result was a
     /// success or failure in addition to the value or error.
     public var debugDescription: String {
@@ -99,11 +104,13 @@ extension AFResult: CustomDebugStringConvertible {
             return "FAILURE: \(error)"
         }
     }
+    
 }
 
 // MARK: - Functional APIs
 
 extension AFResult {
+    
     /// Creates a `Result` instance from the result of a closure.
     ///
     /// A failure result is created when the closure throws, and a success result is created when the closure
@@ -297,6 +304,7 @@ extension AFResult {
 }
 
 extension AFResult {
+    
     var swiftResult: Result<Value, Error> {
         switch self {
         case let .success(value):
@@ -305,4 +313,5 @@ extension AFResult {
             return .failure(error)
         }
     }
+    
 }

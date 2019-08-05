@@ -8,6 +8,8 @@
 import Foundation
 
 public extension String {
+    
     var url: URL? { URL(string: self) }
     func regex(_ options: Regex.Options = []) -> Regex { Regex(self, options: options) }
+    
 }

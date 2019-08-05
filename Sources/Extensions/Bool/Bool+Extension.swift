@@ -8,5 +8,7 @@
 import Foundation
 
 extension Bool {
+    
     var data: Data { Data([self ? 1 : 0]) }
+    
 }

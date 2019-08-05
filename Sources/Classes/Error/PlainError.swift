@@ -8,6 +8,7 @@
 import Foundation
 
 public struct PlainError: Error {
+    
     var localizedDescription: String
     public init(_ description: String) {
         self.init(description: description)
@@ -16,4 +17,5 @@ public struct PlainError: Error {
     public init(description: String) {
         localizedDescription = description
     }
+    
 }
