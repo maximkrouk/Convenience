@@ -13,6 +13,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Storage.UserDefaults.default.bool
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

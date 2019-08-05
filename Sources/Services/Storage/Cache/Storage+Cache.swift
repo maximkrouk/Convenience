@@ -39,21 +39,24 @@ public extension Storage {
             self.bool   = .init(storageProvider: storageProvider)
             self.string = .init(storageProvider: storageProvider)
         }
-        
     }
     
 }
 
 public extension Storage.Cache {
+    
     enum Kind {
         case memory
         case storage
     }
+    
 }
 
 extension Storage.Cache {
+    
     class Item {
         var content: Data
         init(content: Data) { self.content = content }
     }
+    
 }

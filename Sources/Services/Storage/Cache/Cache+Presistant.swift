@@ -66,6 +66,7 @@ public extension Storage.Cache {
 }
 
 extension Storage.Cache.Presistant {
+    
     var cacheDirectory: URL {
         try! fileManager.url(for: .cachesDirectory,
                              in: .userDomainMask,
@@ -74,4 +75,5 @@ extension Storage.Cache.Presistant {
     }
     
     func url(for key: String) -> URL { directory.appendingPathComponent("(key).tmp") }
+    
 }
