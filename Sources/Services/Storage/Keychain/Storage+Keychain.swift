@@ -102,9 +102,9 @@ public extension Storage {
         public init(keyPrefix: String = "", accessGroup: String? = nil) {
             self.keyPrefix   = keyPrefix
             self.accessGroup = accessGroup
-            self.data   = .init(storageProvider: self)
-            self.bool   = .init(storageProvider: self)
-            self.string = .init(storageProvider: self)
+            self.data   = .init(storageManager: self)
+            self.bool   = .init(storageManager: self)
+            self.string = .init(storageManager: self)
         }
         
         // MARK: - StorageManager

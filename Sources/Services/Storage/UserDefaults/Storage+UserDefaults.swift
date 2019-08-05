@@ -34,9 +34,9 @@ public extension Storage {
         private (set) public var string: Provider<String>!
         
         public init() {
-            self.data   = .init(storageProvider: self)
-            self.bool   = .init(storageProvider: self)
-            self.string = .init(storageProvider: self)
+            self.data   = .init(storageManager: self)
+            self.bool   = .init(storageManager: self)
+            self.string = .init(storageManager: self)
         }
         
         public func data(forKey key: String) -> AFResult<Data> {
