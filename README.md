@@ -45,7 +45,7 @@ Avalible **Managers:**
 
   _Shortcut: UD_
 
-- `Cache` [temporary / presistant]
+- `Cache` [temporary / persistent]
 
   _Shortcut: CH_
 

@@ -33,7 +33,7 @@ public extension Storage {
         private (set) public var string: Provider<String>!
         
         public init(_ kind: Kind) {
-            let manager: StorageManager = kind == .memory ? Temporary() : Presistant()
+            let manager: StorageManager = kind == .memory ? Temporary() : Persistent()
             self.kind   =  kind
             self.data   = .init(storageManager: manager)
             self.bool   = .init(storageManager: manager)

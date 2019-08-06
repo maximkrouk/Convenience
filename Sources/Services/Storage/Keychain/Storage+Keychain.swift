@@ -114,11 +114,11 @@ public extension Storage {
         public func save(data: Data, forKey key: String) -> AFResult<Void> { setData(data, forKey: key) }
         
         @discardableResult
-        public func delete(key: String) -> AFResult<Void> { execute(with: lock) { unsafeDelete(key) }}
+        public func delete(key: String) -> AFResult<Void> { lock.execute { unsafeDelete(key) }}
         
         @discardableResult
         public func clear() -> AFResult<Void> {
-            execute(with: lock) {
+            lock.execute {
                 var query: Query = [
                     Constants.Key.class.value : kSecClassGenericPassword,
                     Constants.Key.synchronizable.value : kSecAttrSynchronizableAny
@@ -144,7 +144,7 @@ public extension Storage {
         @discardableResult
         public func setData(_ data: Data, forKey key: String,
                         withAccess access: AccessOption = .default) -> AFResult<Void> {
-            execute(with: lock) {
+            lock.execute {
                 unsafeDelete(key)
                
                 let accessible = access.value
@@ -169,7 +169,7 @@ public extension Storage {
         /// - Parameter asReference: If true, returns the data as reference (needed for things like NEVPNProtocol).
         /// - Returns: The data from the keychain. Returns nil if unable to read the item.
         public func getData(forKey key: String, asReference: Bool = false) -> AFResult<Data> {
-            execute(with: lock) {
+            lock.execute {
                 var query: [String: Any] = [
                         Constants.Key.class.value      : kSecClassGenericPassword,
                     Constants.Key.account.value    : key.withPrefix(keyPrefix),
@@ -206,25 +206,6 @@ public extension Storage {
             lastResult.code = SecItemDelete(query.cfDictionary)
             return lastResult.afResult
         }
-    }
-    
-}
-
-extension Storage.Keychain {
-    
-    /// Passthrough closure.
-    ///
-    /// Performs passed actions in lock, if the lock was specified.
-    /// - Parameter lock: Lock, used to sync threads, locks on the start, unlocks immediately after return.
-    /// - Parameter closure: Actions to perform.
-    /// - Returns: The same value as the passed closure.
-    func execute<T>(with lock: NSLock? = .none, closure: () -> T) -> T {
-        // The lock prevents the code to be run simlultaneously
-        // from multiple threads which may result in crashing
-        guard let lock = lock else { return closure() }
-        lock.lock()
-        defer { lock.unlock() }
-        return closure()
     }
     
 }
