@@ -84,9 +84,9 @@ public extension Regex {
     
     /// Returns regex for hex color representation. (With or without one leading "#")
     ///
-    /// - Expression string: "`#{0,1}[0-9A-F]{6}`"
+    /// - Expression string: "`^#{0,1}[0-9A-F]{7}(?:[0-9A-F]{2})?$`"
     /// - Flags: `[.caseInsensitive]`
-    static var color: Regex { "#{0,1}[0-9A-F]{6}".regex(.caseInsensitive) }
+    static var color: Regex { "^#{0,1}[0-9A-F]{7}(?:[0-9A-F]{2})?$".regex(.caseInsensitive) }
 
     /// Returns regex for email. (Taken from [here](https://emailregex.com))
     ///
