@@ -20,6 +20,6 @@ A bunch of usefull extensions and classes for every-app use.
 
   s.ios.deployment_target = '8.0'
   s.swift_version = '5.1'
-  s.source_files = 'Sources/**/**/**/**/*'
+  s.source_files = 'Sources/**/**/**/*'
   s.frameworks = 'UIKit', 'Foundation', 'Security'
 end
