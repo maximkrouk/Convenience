@@ -274,17 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				CED25D8E22F83B9B003B44BA /* Validator.swift */,
-				CED25D9222F83FBA003B44BA /* String */,
-			);
-			path = Validators;
-			sourceTree = "<group>";
-		};
-		CED25D9222F83FBA003B44BA /* String */ = {
-			isa = PBXGroup;
-			children = (
 				CED25D9322F83FBD003B44BA /* Validator+String.swift */,
 			);
-			path = String;
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		CED25D9622F84E6B003B44BA /* UserDefaults */ = {
