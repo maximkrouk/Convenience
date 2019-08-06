@@ -5,6 +5,11 @@ Pod::Spec.new do |s|
 
   s.description      =  <<-DESC
 A bunch of usefull extensions and classes for every-app use.
+- Thread safe storage managers and providers for keychain, userdefaults, temporary and persistent cache.
+- Flexible and customizable validators + string regex-based validator.
+- Regex templates.
+- Collection subscripts.
+- Beautiful extensions.
                        DESC
 
   s.homepage         = 'https://github.com/mx-cat/Convenience'
