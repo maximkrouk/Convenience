@@ -20,7 +20,7 @@ Every type of storage:
 
 - Has the same interface.
 - Extendable.
-- Thread safe (exept of Permanent cache, thread safety for this cache will be provided soon.)
+- Thread safe.
 
 #### Interface:
 
@@ -103,11 +103,42 @@ but also like this:
 
 - `Storage.Keychain.data.set(nil, forKey: "deletedItem")`
 - `Storage.Keychain.data.get(forKey: "deletedItem") // nil`
-
 - `Storage.Keychain.data["StringKeys"] = "Sucks c:".data(using: .utf8)`
 - `Storage.Keychain.default.string[.username] = "Root"`
 - `Storage.Keychain.default.bool[.isAdmin] = true`
 - `Storage.KC.bool[.isAdmin] // true`
+
+### Validators
+
+For any validations you may specify your own validators by using `Validator<Value>` struct, which implements `AnyValidator` protocol. For that you should initialize it with a validation condition:
+
+```swift
+let redViewValidator = Validator<UIView>(condition : { view in
+    view.backgroundColor == .red ? 
+        .success(()) :
+        .failure(PlainError("Passed view is not red."))
+})
+```
+
+The framework provides string validators out of the box:
+
+```swift
+typealias StringValidator = Validator<String>
+```
+
+It may be initialized with regex:
+
+```swift
+let emailValidator = StringValidator(regex: .email)
+let hexColorValidator = StringValidator(regex: .color, failureDescription: "It wasn't the hex color string!")
+```
+
+To perform validation call `.validate(value)`
+
+```
+emailValidator.validate("some.cool.email@example.co.uk") // .success
+emailValidator.validate("#058FA2") // .failure("Regex match failed.")
+```
 
 ----
 
