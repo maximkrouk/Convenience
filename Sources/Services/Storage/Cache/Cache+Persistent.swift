@@ -1,5 +1,5 @@
 //
-//  Cache+Presistant.swift
+//  Cache+Persistent.swift
 //  Convenience
 //
 //  Created by Maxim Krouk on 8/5/19.
@@ -9,7 +9,7 @@ import Foundation
 
 extension Storage.Cache {
     
-    class Presistant: StorageManager {
+    class Persistent: StorageManager {
         private let lock = NSLock()
         private let fileManager = FileManager.default
         public var directory: URL {
@@ -72,7 +72,7 @@ extension Storage.Cache {
     
 }
 
-private extension Storage.Cache.Presistant {
+private extension Storage.Cache.Persistent {
     
     var cacheDirectory: URL {
         try! fileManager.url(for: .cachesDirectory,
