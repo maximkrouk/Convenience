@@ -3,14 +3,9 @@ Pod::Spec.new do |s|
   s.version          = '0.2.0'
   s.summary      = 'The most swift framework for your apps.'
 
-  s.description      = <<-DESC
+  s.description      =  <<-DESC
 A bunch of usefull extensions and classes for every-app use.
-- Thread safe storage managers and providers for keychain, userdefaults, temporary and persistent cache. 
-- Flexible and customizable validators + string regex-based validator.
-- Regex templates.
-- Collection subscripts.
-- Beautiful extensions.
-​                       DESC
+                       DESC
 
   s.homepage         = 'https://github.com/mx-cat/Convenience'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
