@@ -1,11 +1,16 @@
 Pod::Spec.new do |s|
   s.name             = 'Convenience'
-  s.version          = '0.1.0'
-  s.summary          = 'Convenient swift framework.'
+  s.version          = '0.2.0'
+  s.summary      = 'The most swift framework for your apps.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+A bunch of usefull extensions and classes for every-app use.
+- Thread safe storage managers and providers for keychain, userdefaults, temporary and persistent cache. 
+- Flexible and customizable validators + string regex-based validator.
+- Regex templates.
+- Collection subscripts.
+- Beautiful extensions.
+​                       DESC
 
   s.homepage         = 'https://github.com/mx-cat/Convenience'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -15,6 +20,6 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
   s.swift_version = '5.1'
-  s.source_files = 'Sources/**/**/**/*'
+  s.source_files = 'Sources/**/**/**/**/*'
   s.frameworks = 'UIKit', 'Foundation', 'Security'
 end
