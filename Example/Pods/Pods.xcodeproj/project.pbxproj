@@ -13,6 +13,7 @@
 		86E73EF08B5FC21D7112127788B69906 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		9A8DBC7E7ADBD1C48446E6994B74BE66 /* Pods-Convenience_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CE673AB5D5997B3F48717B4E3BBAE46 /* Pods-Convenience_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE0684C822F9620700D991F7 /* NSLock+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0684C722F9620700D991F7 /* NSLock+Extension.swift */; };
+		CE51B66D22FAE91E00234F52 /* Regex+Descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */; };
 		CED25D9422F83FD9003B44BA /* Validator+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9322F83FBD003B44BA /* Validator+String.swift */; };
 		CED25D9822F84E8E003B44BA /* Storage+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */; };
 		CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25DA022F85BAA003B44BA /* Storage+Cache.swift */; };
@@ -89,6 +90,7 @@
 		A9759FDFA398CC8DC0A59765966C5848 /* Convenience-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Convenience-dummy.m"; sourceTree = "<group>"; };
 		AD4E2B96D7418E52105C13509EB744FA /* Convenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convenience-umbrella.h"; sourceTree = "<group>"; };
 		CE0684C722F9620700D991F7 /* NSLock+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLock+Extension.swift"; sourceTree = "<group>"; };
+		CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Regex+Descriptor.swift"; sourceTree = "<group>"; };
 		CED25D9322F83FBD003B44BA /* Validator+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validator+String.swift"; sourceTree = "<group>"; };
 		CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+UserDefaults.swift"; sourceTree = "<group>"; };
 		CED25DA022F85BAA003B44BA /* Storage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Cache.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				E1303AA022F776EE00DE9CAC /* NSRegularExpresson+Extension.swift */,
+				CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */,
 			);
 			path = NSRegularExpression;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */,
 				E17E86FE22F656D700102D0E /* Keychain+AccessOptions.swift in Sources */,
 				E17C16AC22F59406005BA34A /* Data+Convert.swift in Sources */,
+				CE51B66D22FAE91E00234F52 /* Regex+Descriptor.swift in Sources */,
 				E15E1E7D22F78BF0003AEBAA /* String+Extension.swift in Sources */,
 				E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */,
 				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,

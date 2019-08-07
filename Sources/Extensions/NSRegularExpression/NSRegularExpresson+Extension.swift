@@ -24,80 +24,140 @@ public extension Regex {
             preconditionFailure("Illegal regular expression: \(pattern).")
         }
     }
+    
+    var descriptor: Descriptor { Descriptor(regex: self) }
 
     /// - Returns: true if the parameter matches self, false otherwise.
-    func matches(_ string: String) -> Bool {
+    func match(_ string: String) -> AFResult<String> {
         let range = NSRange(location: 0, length: string.utf16.count)
-        return firstMatch(in: string, options: [], range: range) != nil
+        return firstMatch(in: string, options: [], range: range) != nil ? .success(string) : .failure(descriptor.error!)
     }
     
 }
 
 public extension Regex {
     
-    /// Returns regex that matches any non empty string,
+    /// Regex getter.
     ///
-    /// - Expression string: "`.*`"
-    static var nonEmpty: Regex { ".*".regex() }
+    /// Expression string: "
+    /// - Emply string: "`"^$"`"
+    /// - Non-empty string: `"^..*$"`
+    ///
+    /// - Parameter value: Specifies if returned regex should match an empty or non-empty string.
+    /// - Returns: Regex that matches any line of word characters.
+    static func empty(_ value: Bool = true) -> Regex { (value ? "^$" : "^..*$").regex() }
+        
+    /// Regex getter.
+    ///
+    /// Word characters:
+    /// - a-z
+    /// - A-Z
+    /// - 0-9
+    /// - _ (underscore).
+    ///
+    /// Expression string:
+    /// - Spaces restricted: `"^\w*$"`
+    /// - Spaces allowed: `"^[\s\w]*$"`
+    ///
+    /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
+    /// - Returns: Regex that matches any line of word characters.
+    static func words(allowSpaces: Bool = true) -> Regex { (allowSpaces ? "^[\\s\\w]*$" : "^\\w*$").regex() }
     
-    /// Returns regex that matches letter strings only,
+    /// Regex getter.
     ///
-    /// - Expression string: "`[A-Z]*`"
-    /// - Flags: `[.caseInsensitive]`
-    static var letters: Regex { "[A-Z]*".regex(.caseInsensitive) }
+    /// Expression string:
+    /// - No letters, no spaces: `"^[^[:alpha:]\s]*$"`
+    /// - No letters, spaces: `"^[^[:alpha:]]*$"`
+    /// - Letters, no spaces: `"^[[:alpha:]]*$"`
+    /// - Letters, spaces: `"^[[:alpha:]\s]*$"`
+    ///
+    /// - Parameter value: Specifies if returned regex should match a letter string.
+    /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
+    /// - Returns: Regex that matches any line of word characters.
+    static func letters(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
+        let not = value ? "" : "^"
+        let spaces = allowSpaces == value ? "\\s" : ""
+        return "^[\(not)[:alpha:]\(spaces)]$".regex()
+    }
 
-    /// Returns regex that matches digital strings only,
+    /// Regex getter.
     ///
-    /// - Expression string: "`[0-9]*`"
-    static var digits: Regex { "[0-9]*".regex() }
+    /// Expression string:
+    /// - No digits, no spaces: `"^[^[:digit:]\s]*$"`
+    /// - No digits, spaces: `"^[^[:digit:]]*$"`
+    /// - Digits, no spaces: `"^[[:digit:]]*$"`
+    /// - Digits, spaces: `"^[[:digit:]\s]*$"`
+    ///
+    /// - Parameter value: Specifies if returned regex should match a digital string.
+    /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
+    /// - Returns: Regex that matches any line of word characters.
+    static func digits(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
+        let not = value ? "" : "^"
+        let spaces = allowSpaces == value ? "\\s" : ""
+        return "^[\(not)[:digit:]\(spaces)]$".regex()
+    }
     
-    /// Returns regex that matches binary strings only,
+    /// Regex getter.
     ///
-    /// - Expression string: "`[0-1]*`"
-    static var binary: Regex { "[0-1]*".regex() }
-
-    /// Returns regex that matches uppercased strings only,
+    /// Expression string:
+    /// - No digits, no spaces: `"^[^[:xdigit:]\s]*$"`
+    /// - No digits, spaces: `"^[^[:xdigit:]]*$"`
+    /// - Digits, no spaces: `"^[[:xdigit:]]*$"`
+    /// - Digits, spaces: `"^[[:xdigit:]\s]*$"`
     ///
-    /// - Expression string: "`[A-Z]*`"
-    static var uppercased: Regex { "[A-Z]*".regex() }
-
-    /// Returns regex that matches lowercased strings only,
-    ///
-    /// - Expression string: "`[a-z]*`"
-    static var lowercased: Regex { "[a-z]*".regex() }
-
-    /// Returns regex that matches letter-digital strings only,
-    ///
-    /// - Expression string: "`[0-9A-Z]*`:
-    /// - Flags: `[.caseInsensitive]`
-    static var lettersAndDigits: Regex { "[0-9A-Z]*".regex(.caseInsensitive) }
-
-    /// Returns regex that matches uppercased letter-digital string only,
-    ///
-    /// - Expression string: "`[0-9A-Z]*`"
-    static var uppercasedAndDigits: Regex { "[0-9A-Z]*".regex() }
-
-    /// Returns regex that matches lowercased letter-digital string only,
-    ///
-    /// - Expression string: "`[0-9a-z]*`"
-    static var lowercasedAndDigits: Regex { "[0-9a-z]*".regex() }
+    /// - Parameter value: Specifies if returned regex should match a digital string.
+    /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
+    /// - Returns: Regex that matches any line of word characters.
+    static func hex(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
+        let not = value ? "" : "^"
+        let spaces = allowSpaces == value ? "\\s" : ""
+        return "^[\(not)[:xdigit:]\(spaces)]$".regex()
+    }
     
-    /// Returns regex for hex color representation. (With or without one leading "#")
+    /// Regex getter.
     ///
-    /// - Expression string: "`^#{0,1}[0-9A-F]{7}(?:[0-9A-F]{2})?$`"
-    /// - Flags: `[.caseInsensitive]`
-    static var color: Regex { "^#{0,1}[0-9A-F]{7}(?:[0-9A-F]{2})?$".regex(.caseInsensitive) }
+    /// Expression string:
+    /// - No digits, no spaces: `"^[^0-1\s]*$"`
+    /// - No digits, spaces: `"^[^0-1]*$"`
+    /// - Digits, no spaces: `"^[0-1]*$"`
+    /// - Digits, spaces: `"^[0-1\s]*$"`
+    ///
+    /// - Parameter value: Specifies if returned regex should match a digital string.
+    /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
+    /// - Returns: Regex that matches any line of word characters.
+    static func binary(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
+        let not = value ? "" : "^"
+        let spaces = allowSpaces == value ? "\\s" : ""
+        return "^[\(not)0-1\(spaces)]$".regex()
+    }
 
-    /// Returns regex for email. (Taken from [here](https://emailregex.com))
+    /// Regex getter.
+    ///
+    /// With or without one leading "#"
+    ///
+    /// - Expression string: "`^#{0,1}[[:xdigit:]]{6}(?:[[:xdigit:]]{2})?$`"
+    ///
+    /// - Returns: regex for hex color representation.
+    static func color() -> Regex { "^#{0,1}[[:xdigit:]]{6}(?:[[:xdigit:]]{2})?$".regex() }
+
+    /// Regex getter.
+    ///
+    /// Taken from [here](https://emailregex.com)
     ///
     /// - Expression string: "`[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,64}`"
     /// - Flags: `[.caseInsensitive]`
-    static var email: Regex { "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,64}".regex(.caseInsensitive) }
+    ///
+    /// - Returns: Regex for email.
+    static func email() -> Regex { "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[[:alpha:]]]{2,64}".regex() }
 
-    /// Returns regex for email. (Taken from [here](https://www.regextester.com/22))
+    /// Regex getter.
+    ///
+    /// Taken from [here](https://www.regextester.com/22)
     ///
     /// - Expression string: "`^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`"
-    static var ipv4: Regex {
+    ///
+    /// - Returns: Regex for email.
+    static func ipv4() -> Regex {
         "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$".regex()
     }
     
