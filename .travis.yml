@@ -11,4 +11,4 @@ language: swift
 # - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Convenience.xcworkspace -scheme Convenience-Example -sdk iphonesimulator12.2 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint --allow-warnings
+- pod lib lint --verbose --allow-warnings
