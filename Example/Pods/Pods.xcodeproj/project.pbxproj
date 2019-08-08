@@ -21,7 +21,6 @@
 		CF65C6F113441D2EA3B72BAFC248EE86 /* Pods-Convenience_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E14C60D9FA4AB212C34D0F4530CA896F /* Pods-Convenience_Tests-dummy.m */; };
 		D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9759FDFA398CC8DC0A59765966C5848 /* Convenience-dummy.m */; };
 		D6E9597D49B911F93870BBAFB1F8EDA5 /* Pods-Convenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E101A6EE22FC7CD8003AB48F /* config.yml in Resources */ = {isa = PBXBuildFile; fileRef = E101A6ED22FC7CD8003AB48F /* config.yml */; };
 		E116409822FA156600FE2E8D /* AnyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116409722FA156600FE2E8D /* AnyValidator.swift */; };
 		E116409A22FA157200FE2E8D /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116409922FA157200FE2E8D /* Validator.swift */; };
 		E1303A9E22F7762900DE9CAC /* UIColor+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1303A9D22F7762900DE9CAC /* UIColor+Convert.swift */; };
@@ -45,6 +44,7 @@
 		E17E870122F6570200102D0E /* CF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CF+Extension.swift */; };
 		E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870322F657DD00102D0E /* Bool+Extension.swift */; };
 		E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870522F6ED0400102D0E /* Data+Decode.swift */; };
+		E1B155E222FC802700B42251 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1B155E122FC802700B42251 /* .travis.yml */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
@@ -99,7 +99,6 @@
 		D27219376A6A229ECC135C0DE0E4490A /* Pods-Convenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Convenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC41746E1399C475380E3247859C9ED /* Convenience.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Convenience.xcconfig; sourceTree = "<group>"; };
 		E0980DC5E039FDBD7466A62E498A58B4 /* Pods-Convenience_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Convenience_Example-Info.plist"; sourceTree = "<group>"; };
-		E101A6ED22FC7CD8003AB48F /* config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
 		E116409722FA156600FE2E8D /* AnyValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyValidator.swift; sourceTree = "<group>"; };
 		E116409922FA157200FE2E8D /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		E1303A9D22F7762900DE9CAC /* UIColor+Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convert.swift"; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		E17E870322F657DD00102D0E /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		E17E870522F6ED0400102D0E /* Data+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decode.swift"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E1B155E122FC802700B42251 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
 		E1F82EAC22F395FB008C2D13 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -248,6 +248,7 @@
 		C44D999A7C875AFD0B6363FCD898DA61 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				E1B155E122FC802700B42251 /* .travis.yml */,
 				99E582C8F4B947F848739BFF7D4AB9D5 /* Convenience.podspec */,
 				1857BD19C00C9871B384CA69B6207EA5 /* LICENSE */,
 				04E3A504B941065B3757617C973AD918 /* README.md */,
@@ -316,14 +317,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E101A6EC22FC7CD8003AB48F /* .circleci */ = {
-			isa = PBXGroup;
-			children = (
-				E101A6ED22FC7CD8003AB48F /* config.yml */,
-			);
-			path = .circleci;
 			sourceTree = "<group>";
 		};
 		E1303A9C22F7760300DE9CAC /* Color */ = {
@@ -510,7 +503,6 @@
 				E1ECB43422F4931D004ACB9F /* Guidlines */,
 				E1F82EA622F39542008C2D13 /* Sources */,
 				C44D999A7C875AFD0B6363FCD898DA61 /* Pod */,
-				E101A6EC22FC7CD8003AB48F /* .circleci */,
 				84405051460C66E7F7B0FDCEE2C7A169 /* Support Files */,
 			);
 			name = Convenience;
@@ -655,7 +647,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E101A6EE22FC7CD8003AB48F /* config.yml in Resources */,
+				E1B155E222FC802700B42251 /* .travis.yml in Resources */,
 				E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
