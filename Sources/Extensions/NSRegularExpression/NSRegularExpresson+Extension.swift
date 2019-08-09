@@ -27,17 +27,22 @@ public extension Regex {
     
     var descriptor: Descriptor { Descriptor(regex: self) }
 
-    /// - Returns: true if the parameter matches self, false otherwise.
+    /// Matches a string with self.
+    ///
+    /// - Parameter string: string to find regex matches in.
+    /// - Returns: .success(string) if the parameter matches self, .failure(error) otherwise.
     func match(_ string: String) -> AFResult<String> {
-        let range = NSRange(location: 0, length: string.utf16.count)
-        return firstMatch(in: string, options: [], range: range) != nil ? .success(string) : .failure(descriptor.error!)
+        let range = NSRange(0..<string.count)
+        return firstMatch(in: string, options: [], range: range).isNil ?
+            .success(string) :
+            .failure(descriptor.description)
     }
     
 }
 
 public extension Regex {
     
-    /// Regex getter.
+    /// Regex getter for an empty or non-empty string regex.
     ///
     /// Expression string: "
     /// - Emply string: "`"^$"`"
@@ -47,7 +52,7 @@ public extension Regex {
     /// - Returns: Regex that matches any line of word characters.
     static func empty(_ value: Bool = true) -> Regex { (value ? "^$" : "^..*$").regex() }
         
-    /// Regex getter.
+    /// Regex getter for a word-character or non-word-character string regex.
     ///
     /// Word characters:
     /// - a-z
@@ -63,7 +68,7 @@ public extension Regex {
     /// - Returns: Regex that matches any line of word characters.
     static func words(allowSpaces: Bool = true) -> Regex { (allowSpaces ? "^[\\s\\w]*$" : "^\\w*$").regex() }
     
-    /// Regex getter.
+    /// Regex getter for a alphabetic or non-alphabetic string regex.
     ///
     /// Expression string:
     /// - No letters, no spaces: `"^[^[:alpha:]\s]*$"`
@@ -80,7 +85,7 @@ public extension Regex {
         return "^[\(not)[:alpha:]\(spaces)]$".regex()
     }
 
-    /// Regex getter.
+    /// Regex getter for a digital or non-digital string regex.
     ///
     /// Expression string:
     /// - No digits, no spaces: `"^[^[:digit:]\s]*$"`
@@ -97,7 +102,7 @@ public extension Regex {
         return "^[\(not)[:digit:]\(spaces)]$".regex()
     }
     
-    /// Regex getter.
+    /// Regex getter for a hex or non-hex string regex.
     ///
     /// Expression string:
     /// - No digits, no spaces: `"^[^[:xdigit:]\s]*$"`
@@ -114,7 +119,7 @@ public extension Regex {
         return "^[\(not)[:xdigit:]\(spaces)]$".regex()
     }
     
-    /// Regex getter.
+    /// Regex getter for a binary or non-binary string regex.
     ///
     /// Expression string:
     /// - No digits, no spaces: `"^[^0-1\s]*$"`
@@ -131,16 +136,16 @@ public extension Regex {
         return "^[\(not)0-1\(spaces)]$".regex()
     }
 
-    /// Regex getter.
+    /// Regex getter for a hex-color string regex.
     ///
     /// With or without one leading "#"
     ///
     /// - Expression string: "`^#{0,1}[[:xdigit:]]{6}(?:[[:xdigit:]]{2})?$`"
     ///
-    /// - Returns: regex for hex color representation.
+    /// - Returns: Regex for hex color representation.
     static func color() -> Regex { "^#{0,1}[[:xdigit:]]{6}(?:[[:xdigit:]]{2})?$".regex() }
 
-    /// Regex getter.
+    /// Regex getter for email string.
     ///
     /// Taken from [here](https://emailregex.com)
     ///
@@ -150,13 +155,13 @@ public extension Regex {
     /// - Returns: Regex for email.
     static func email() -> Regex { "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[[:alpha:]]]{2,64}".regex() }
 
-    /// Regex getter.
+    /// Regex getter for ipv4-address string regex.
     ///
     /// Taken from [here](https://www.regextester.com/22)
     ///
     /// - Expression string: "`^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`"
     ///
-    /// - Returns: Regex for email.
+    /// - Returns: Regex for ipv4 address.
     static func ipv4() -> Regex {
         "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$".regex()
     }

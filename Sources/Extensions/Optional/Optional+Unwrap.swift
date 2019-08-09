@@ -13,6 +13,11 @@ public extension Optional {
     /// Sets object to nil.
     mutating func release() { self = nil }
     
+    var isNil: Bool {
+        guard let _ = self else { return true }
+        return false
+    }
+    
     /// Safely casts the caller to specified type.
     ///
     /// - Parameter default: the type to which the caller will be casted to.
