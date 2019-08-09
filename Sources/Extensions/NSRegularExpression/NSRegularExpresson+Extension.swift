@@ -36,8 +36,8 @@ public extension Regex {
     func match(_ string: String) -> Result {
         let range = NSRange(0..<string.count)
         return firstMatch(in: string, options: [], range: range).isNil ?
-            .success(string) :
-            .failure(descriptor.description)
+            .failure(descriptor.description) :
+            .success(string)
     }
     
 }
