@@ -5,14 +5,21 @@
 os: osx
 osx_image: xcode11
 language: swift
+
 branches:
   only:
   - master
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+
+podfile: Example/Podfile
+
 script:
-# - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Convenience.xcworkspace -scheme Convenience-Example -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
+- gem install cocoapods
+- pod install --project-directory=Example
+- set -o pipefail && xcodebuild \
+    -enableCodeCoverage YES \
+    -workspace Example/Convenience.xcworkspace \
+    -scheme Convenience-Example \
+    -sdk iphonesimulator13.0 \
+    ONLY_ACTIVE_ARCH=NO
+    clean test | xcpretty
 - pod lib lint --verbose --allow-warnings

@@ -45,7 +45,6 @@
 		E17E870122F6570200102D0E /* CF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CF+Extension.swift */; };
 		E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870322F657DD00102D0E /* Bool+Extension.swift */; };
 		E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870522F6ED0400102D0E /* Data+Decode.swift */; };
-		E1B155E222FC802700B42251 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1B155E122FC802700B42251 /* .travis.yml */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
@@ -92,6 +91,8 @@
 		AD4E2B96D7418E52105C13509EB744FA /* Convenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convenience-umbrella.h"; sourceTree = "<group>"; };
 		CE0684C722F9620700D991F7 /* NSLock+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLock+Extension.swift"; sourceTree = "<group>"; };
 		CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Regex+Descriptor.swift"; sourceTree = "<group>"; };
+		CEA54A7C22FDE77600AFA476 /* .xcodebuild.tests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = .xcodebuild.tests.sh; path = ../.xcodebuild.tests.sh; sourceTree = "<group>"; };
+		CEA54A7D22FDE77600AFA476 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		CED25D9322F83FBD003B44BA /* Validator+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validator+String.swift"; sourceTree = "<group>"; };
 		CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+UserDefaults.swift"; sourceTree = "<group>"; };
 		CED25DA022F85BAA003B44BA /* Storage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Cache.swift"; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		E17E870322F657DD00102D0E /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		E17E870522F6ED0400102D0E /* Data+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decode.swift"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E1B155E122FC802700B42251 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
 		E1F82EAC22F395FB008C2D13 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -250,7 +250,6 @@
 		C44D999A7C875AFD0B6363FCD898DA61 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				E1B155E122FC802700B42251 /* .travis.yml */,
 				99E582C8F4B947F848739BFF7D4AB9D5 /* Convenience.podspec */,
 				1857BD19C00C9871B384CA69B6207EA5 /* LICENSE */,
 				04E3A504B941065B3757617C973AD918 /* README.md */,
@@ -264,6 +263,15 @@
 				CE0684C722F9620700D991F7 /* NSLock+Extension.swift */,
 			);
 			path = NSLock;
+			sourceTree = "<group>";
+		};
+		CEA54A7B22FDE73D00AFA476 /* TravisCI */ = {
+			isa = PBXGroup;
+			children = (
+				CEA54A7D22FDE77600AFA476 /* .travis.yml */,
+				CEA54A7C22FDE77600AFA476 /* .xcodebuild.tests.sh */,
+			);
+			path = TravisCI;
 			sourceTree = "<group>";
 		};
 		CED25D8922F83A4A003B44BA /* Validation */ = {
@@ -503,6 +511,7 @@
 		F98261C9B23C9AE174B9D045948CA77A /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
+				CEA54A7B22FDE73D00AFA476 /* TravisCI */,
 				E1ECB43422F4931D004ACB9F /* Guidlines */,
 				E1F82EA622F39542008C2D13 /* Sources */,
 				C44D999A7C875AFD0B6363FCD898DA61 /* Pod */,
@@ -650,7 +659,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B155E222FC802700B42251 /* .travis.yml in Resources */,
 				E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
