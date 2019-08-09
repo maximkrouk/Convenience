@@ -15,11 +15,6 @@ podfile: Example/Podfile
 script:
 - gem install cocoapods
 - pod install --project-directory=Example
-- set -o pipefail && xcodebuild \
-    -enableCodeCoverage YES \
-    -workspace Example/Convenience.xcworkspace \
-    -scheme Convenience-Example \
-    -sdk iphonesimulator13.0 \
-    ONLY_ACTIVE_ARCH=NO
-    clean test | xcpretty
+- chmod +x .xcodebuild.tests.sh
+- ./.xcodebuild.tests.sh
 - pod lib lint --verbose --allow-warnings

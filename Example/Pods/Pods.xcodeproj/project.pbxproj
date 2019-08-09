@@ -91,8 +91,8 @@
 		AD4E2B96D7418E52105C13509EB744FA /* Convenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Convenience-umbrella.h"; sourceTree = "<group>"; };
 		CE0684C722F9620700D991F7 /* NSLock+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLock+Extension.swift"; sourceTree = "<group>"; };
 		CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Regex+Descriptor.swift"; sourceTree = "<group>"; };
-		CEA54A7C22FDE77600AFA476 /* .xcodebuild.tests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = .xcodebuild.tests.sh; path = ../.xcodebuild.tests.sh; sourceTree = "<group>"; };
-		CEA54A7D22FDE77600AFA476 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		CEA54A8D22FDEBC500AFA476 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		CEA54A8E22FDEBC600AFA476 /* .xcodebuild.tests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = .xcodebuild.tests.sh; path = ../.xcodebuild.tests.sh; sourceTree = "<group>"; };
 		CED25D9322F83FBD003B44BA /* Validator+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validator+String.swift"; sourceTree = "<group>"; };
 		CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+UserDefaults.swift"; sourceTree = "<group>"; };
 		CED25DA022F85BAA003B44BA /* Storage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Cache.swift"; sourceTree = "<group>"; };
@@ -265,11 +265,11 @@
 			path = NSLock;
 			sourceTree = "<group>";
 		};
-		CEA54A7B22FDE73D00AFA476 /* TravisCI */ = {
+		CEA54A8C22FDEBB400AFA476 /* TravisCI */ = {
 			isa = PBXGroup;
 			children = (
-				CEA54A7D22FDE77600AFA476 /* .travis.yml */,
-				CEA54A7C22FDE77600AFA476 /* .xcodebuild.tests.sh */,
+				CEA54A8D22FDEBC500AFA476 /* .travis.yml */,
+				CEA54A8E22FDEBC600AFA476 /* .xcodebuild.tests.sh */,
 			);
 			path = TravisCI;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 		F98261C9B23C9AE174B9D045948CA77A /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
-				CEA54A7B22FDE73D00AFA476 /* TravisCI */,
+				CEA54A8C22FDEBB400AFA476 /* TravisCI */,
 				E1ECB43422F4931D004ACB9F /* Guidlines */,
 				E1F82EA622F39542008C2D13 /* Sources */,
 				C44D999A7C875AFD0B6363FCD898DA61 /* Pod */,
