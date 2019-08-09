@@ -11,7 +11,7 @@ extension UIColor {
     
     /// Creates a new UIColor instance from hex representation.
     public convenience init?(hex: String) {
-        guard Regex.color.matches(hex) else { return nil }
+        guard Regex.color().match(hex).isSuccess else { return nil }
         let color = hex.replacingOccurrences(of: "#", with: "")
         var number: UInt64 = 0
         

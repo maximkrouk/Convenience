@@ -16,11 +16,7 @@ public extension Validator where Value == String {
     /// - Parameter regex: Used to generate a validation condition.
     /// - Parameter failureDescription: Description of the failure. Pass nothing or nil to use default: "Regex match failed."
     init(regex: Regex, failureDescription: String? = nil) {
-        self.init(condition: { value in
-            regex.matches(value) ?
-                .success(value) :
-                .failure(PlainError(description: failureDescription.unwrap(default: "Regex match failed.")))
-        })
+        self.init { regex.match($0) }
     }
     
 }
