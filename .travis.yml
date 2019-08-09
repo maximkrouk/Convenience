@@ -17,4 +17,4 @@ script:
 - pod install --project-directory=Example
 - chmod +x .xcodebuild.tests.sh
 - ./.xcodebuild.tests.sh
-- pod lib lint --verbose --allow-warnings
+- pod lib lint --allow-warnings
