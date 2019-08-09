@@ -303,7 +303,7 @@ extension AFResult {
 
 }
 
-extension AFResult {
+public extension AFResult {
     
     var swiftResult: Result<Value, Error> {
         switch self {
