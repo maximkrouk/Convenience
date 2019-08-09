@@ -13,8 +13,14 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		B6A5CD56F76AC0DEA1CDA201 /* Pods_Convenience_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8526CD169EBFBB7873A6F03 /* Pods_Convenience_Tests.framework */; };
+		CEA54A6322FD958300AFA476 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6122FD951B00AFA476 /* RegexTests.swift */; };
+		CEA54A6722FDA69A00AFA476 /* TestGroupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6522FDA68500AFA476 /* TestGroupBuilder.swift */; };
+		CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */; };
+		CEA54A7022FDCB6B00AFA476 /* TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6E22FDCB3700AFA476 /* TestResultGroup.swift */; };
+		CEA54A7222FDCB9000AFA476 /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A7122FDCB9000AFA476 /* Result+Extension.swift */; };
+		CEA54A7322FDCB9000AFA476 /* Result+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A7122FDCB9000AFA476 /* Result+Extension.swift */; };
+		CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +46,16 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Convenience_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Convenience_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7066463E6DAA96A5A8F4EEA9 /* Pods-Convenience_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Convenience_Tests/Pods-Convenience_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A407FB14D00334D9ADAD59B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8F7DE31C65EECB270E25AF76 /* Pods-Convenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Example.debug.xcconfig"; path = "Target Support Files/Pods-Convenience_Example/Pods-Convenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		90C32F75371EAA2A4FB0CDE5 /* Pods-Convenience_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Example.release.xcconfig"; path = "Target Support Files/Pods-Convenience_Example/Pods-Convenience_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CEA54A6122FD951B00AFA476 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		CEA54A6522FDA68500AFA476 /* TestGroupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroupBuilder.swift; sourceTree = "<group>"; };
+		CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroup.swift; sourceTree = "<group>"; };
+		CEA54A6E22FDCB3700AFA476 /* TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultGroup.swift; sourceTree = "<group>"; };
+		CEA54A7122FDCB9000AFA476 /* Result+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extension.swift"; sourceTree = "<group>"; };
+		CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AFResult+TestResultGroup.swift"; sourceTree = "<group>"; };
 		D95306077BAAC4077CDD1805 /* Pods-Convenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Tests.release.xcconfig"; path = "Target Support Files/Pods-Convenience_Tests/Pods-Convenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F8526CD169EBFBB7873A6F03 /* Pods_Convenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Convenience_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,7 +135,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				CEA54A7422FDCBED00AFA476 /* Adapters */,
+				CEA54A6D22FDCB2100AFA476 /* TestResult */,
+				CEA54A6922FDCAD400AFA476 /* TestGroup */,
+				CEA54A6122FD951B00AFA476 /* RegexTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -157,6 +171,40 @@
 				D95306077BAAC4077CDD1805 /* Pods-Convenience_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEA54A6922FDCAD400AFA476 /* TestGroup */ = {
+			isa = PBXGroup;
+			children = (
+				CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */,
+				CEA54A6522FDA68500AFA476 /* TestGroupBuilder.swift */,
+			);
+			name = TestGroup;
+			sourceTree = "<group>";
+		};
+		CEA54A6D22FDCB2100AFA476 /* TestResult */ = {
+			isa = PBXGroup;
+			children = (
+				CEA54A6E22FDCB3700AFA476 /* TestResultGroup.swift */,
+				CEA54A7122FDCB9000AFA476 /* Result+Extension.swift */,
+			);
+			name = TestResult;
+			sourceTree = "<group>";
+		};
+		CEA54A7422FDCBED00AFA476 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				CEA54A7522FDCBF100AFA476 /* AFResult */,
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
+		CEA54A7522FDCBF100AFA476 /* AFResult */ = {
+			isa = PBXGroup;
+			children = (
+				CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */,
+			);
+			name = AFResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA54A7222FDCB9000AFA476 /* Result+Extension.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -342,7 +391,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				CEA54A7022FDCB6B00AFA476 /* TestResultGroup.swift in Sources */,
+				CEA54A7322FDCB9000AFA476 /* Result+Extension.swift in Sources */,
+				CEA54A6322FD958300AFA476 /* RegexTests.swift in Sources */,
+				CEA54A6722FDA69A00AFA476 /* TestGroupBuilder.swift in Sources */,
+				CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */,
+				CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
