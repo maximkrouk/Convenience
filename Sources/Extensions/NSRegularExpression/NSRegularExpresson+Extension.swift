@@ -16,6 +16,8 @@ public typealias Regex = NSRegularExpression
 
 public extension Regex {
     
+    typealias Result = AFResult<String>
+    
     /// Creates a new instance with specified pattern and options.
     convenience init(_ pattern: String, options: Options = []) {
         do {
@@ -31,7 +33,7 @@ public extension Regex {
     ///
     /// - Parameter string: string to find regex matches in.
     /// - Returns: .success(string) if the parameter matches self, .failure(error) otherwise.
-    func match(_ string: String) -> AFResult<String> {
+    func match(_ string: String) -> Result {
         let range = NSRange(0..<string.count)
         return firstMatch(in: string, options: [], range: range).isNil ?
             .success(string) :
@@ -82,7 +84,7 @@ public extension Regex {
     static func letters(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
         let not = value ? "" : "^"
         let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:alpha:]\(spaces)]$".regex()
+        return "^[\(not)[:alpha:]\(spaces)]*$".regex()
     }
 
     /// Regex getter for a digital or non-digital string regex.
@@ -99,7 +101,7 @@ public extension Regex {
     static func digits(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
         let not = value ? "" : "^"
         let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:digit:]\(spaces)]$".regex()
+        return "^[\(not)[:digit:]\(spaces)]*$".regex()
     }
     
     /// Regex getter for a hex or non-hex string regex.
@@ -116,7 +118,7 @@ public extension Regex {
     static func hex(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
         let not = value ? "" : "^"
         let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:xdigit:]\(spaces)]$".regex()
+        return "^[\(not)[:xdigit:]\(spaces)]*$".regex()
     }
     
     /// Regex getter for a binary or non-binary string regex.
@@ -133,7 +135,7 @@ public extension Regex {
     static func binary(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
         let not = value ? "" : "^"
         let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)0-1\(spaces)]$".regex()
+        return "^[\(not)0-1\(spaces)]*$".regex()
     }
 
     /// Regex getter for a hex-color string regex.
