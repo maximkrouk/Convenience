@@ -11,11 +11,11 @@ public extension Regex {
     
     struct Descriptor {
         var regex: Regex
-        private(set) public var error: Error?
+        private var error: Error?
         
         public init(regex: Regex, error: Error? = nil) {
             self.regex = regex
-            self.error = error!
+            self.error = error
         }
         
         var description: Error {
