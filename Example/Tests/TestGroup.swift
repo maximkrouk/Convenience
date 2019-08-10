@@ -9,13 +9,14 @@
 import XCTest
 import Convenience
 
+/// Assert provider.
 struct TestGroup {
-    let results: [AFResult<Void>]
-    private init(@TestGroup.Builder closure: TestGroup.Builder.Block) { results = closure().results }
     
-    var isFailure: Bool { !isSuccess }
-    var isSuccess: Bool { results.reduce(true, { $0 && $1.isSuccess }) }
-    var errors: Errors { results.compactMap { $0.error } }
+    /// An array of test results.
+    let results: [AFResult<Void>]
+    
+    /// Creates a new TestGroup instance.
+    private init(@TestGroup.Builder closure: TestGroup.Builder.Block) { results = closure().results }
     
     func forEach(_ execute: (AFResult<Void>) throws -> Void) rethrows { try results.forEach(execute) }
     
@@ -35,4 +36,5 @@ struct TestGroup {
             }
         }
     }
+    
 }

@@ -10,6 +10,7 @@ import XCTest
 import Convenience
 
 extension TestGroup {
+    
     @_functionBuilder
     struct Builder {
         typealias Block = () -> TestResultGroup
@@ -17,4 +18,5 @@ extension TestGroup {
             .init(results: groups.reduce([AFResult<Void>](), { $0 + $1.results }))
         }
     }
+    
 }
