@@ -11,7 +11,7 @@ import Convenience
 
 struct TestGroup {
     let results: [AFResult<Void>]
-    init(@TestGroup.Builder closure: TestGroup.Builder.Block) { results = closure().results }
+    private init(@TestGroup.Builder closure: TestGroup.Builder.Block) { results = closure().results }
     
     var isFailure: Bool { !isSuccess }
     var isSuccess: Bool { results.reduce(true, { $0 && $1.isSuccess }) }
