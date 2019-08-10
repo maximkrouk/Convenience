@@ -7,15 +7,16 @@
 
 import Foundation
 
-public func fallback(@Fallback.Builer closure: Fallback.Builer.Closure) -> AFResult<Void> {
+public func fallback(@FallbackBuiler closure: FallbackBuiler.Closure) -> AFResult<Void> {
     do { return .success(try closure()()) }
     catch { return .failure(error) }
 }
 
+@_functionBuilder
 public struct FallbackBuiler {
-    typealias Closure = () -> Block
-    typealias Block = () throws -> Void
-    static func buildBlock(_ items: Block...) -> Block {
+    public typealias Closure = () -> Block
+    public typealias Block = () throws -> Void
+    public static func buildBlock(_ items: Block...) -> Block {
         return {
             do {
                 try items.forEach {
