@@ -49,6 +49,7 @@
 		E1C5114422FEC12A009C5D6A /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114322FEC12A009C5D6A /* Collect.swift */; };
 		E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114622FEC19C009C5D6A /* ErrorBag.swift */; };
 		E1C5114922FECBEA009C5D6A /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114822FECBEA009C5D6A /* Typealiases.swift */; };
+		E1C5114C22FED151009C5D6A /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114B22FED151009C5D6A /* Error+Extension.swift */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
@@ -133,6 +134,7 @@
 		E1C5114322FEC12A009C5D6A /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
 		E1C5114622FEC19C009C5D6A /* ErrorBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBag.swift; sourceTree = "<group>"; };
 		E1C5114822FECBEA009C5D6A /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		E1C5114B22FED151009C5D6A /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
 		E1F82EAC22F395FB008C2D13 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -488,6 +490,14 @@
 			path = Collect;
 			sourceTree = "<group>";
 		};
+		E1C5114A22FED144009C5D6A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5114B22FED151009C5D6A /* Error+Extension.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		E1ECB43422F4931D004ACB9F /* Guidlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +521,7 @@
 		E1F82EA722F39559008C2D13 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E1C5114A22FED144009C5D6A /* Error */,
 				CE0684C622F961F400D991F7 /* NSLock */,
 				E17E86F322F6542900102D0E /* Bool */,
 				E1303AA422F7782100DE9CAC /* Collection */,
@@ -740,6 +751,7 @@
 				E15E1E7D22F78BF0003AEBAA /* String+Extension.swift in Sources */,
 				E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */,
 				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,
+				E1C5114C22FED151009C5D6A /* Error+Extension.swift in Sources */,
 				E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */,
 				CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */,
 				E116409822FA156600FE2E8D /* AnyValidator.swift in Sources */,

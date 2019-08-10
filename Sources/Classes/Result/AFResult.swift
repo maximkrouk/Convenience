@@ -314,10 +314,6 @@ public extension AFResult {
         }
     }
     
-    var errorBag: ErrorBag? {
-        guard let error = error else { return nil }
-        guard let bag = error as? ErrorBag else { return ErrorBag(error: error) }
-        return bag
-    }
+    var errorBag: ErrorBag? { error?.bag }
     
 }
