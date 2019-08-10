@@ -45,10 +45,11 @@
 		E17E870122F6570200102D0E /* CF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CF+Extension.swift */; };
 		E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870322F657DD00102D0E /* Bool+Extension.swift */; };
 		E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870522F6ED0400102D0E /* Data+Decode.swift */; };
+		E18E5A7222FF2725006FD733 /* CollectBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7122FF2725006FD733 /* CollectBuilder.swift */; };
+		E18E5A7422FF2746006FD733 /* FallbackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7322FF2746006FD733 /* FallbackBuilder.swift */; };
 		E1C5114022FEAE03009C5D6A /* Fallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5113F22FEAE03009C5D6A /* Fallback.swift */; };
 		E1C5114422FEC12A009C5D6A /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114322FEC12A009C5D6A /* Collect.swift */; };
 		E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114622FEC19C009C5D6A /* ErrorBag.swift */; };
-		E1C5114922FECBEA009C5D6A /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114822FECBEA009C5D6A /* Typealiases.swift */; };
 		E1C5114C22FED151009C5D6A /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114B22FED151009C5D6A /* Error+Extension.swift */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
@@ -132,10 +133,11 @@
 		E17E870322F657DD00102D0E /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		E17E870522F6ED0400102D0E /* Data+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decode.swift"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E18E5A7122FF2725006FD733 /* CollectBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBuilder.swift; sourceTree = "<group>"; };
+		E18E5A7322FF2746006FD733 /* FallbackBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackBuilder.swift; sourceTree = "<group>"; };
 		E1C5113F22FEAE03009C5D6A /* Fallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fallback.swift; sourceTree = "<group>"; };
 		E1C5114322FEC12A009C5D6A /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
 		E1C5114622FEC19C009C5D6A /* ErrorBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBag.swift; sourceTree = "<group>"; };
-		E1C5114822FECBEA009C5D6A /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		E1C5114B22FED151009C5D6A /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				E1C5113F22FEAE03009C5D6A /* Fallback.swift */,
+				E18E5A7322FF2746006FD733 /* FallbackBuilder.swift */,
 			);
 			path = Fallback;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				E1C5114322FEC12A009C5D6A /* Collect.swift */,
+				E18E5A7122FF2725006FD733 /* CollectBuilder.swift */,
 			);
 			path = Collect;
 			sourceTree = "<group>";
@@ -520,7 +524,6 @@
 		E1F82EA622F39542008C2D13 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E1C5114822FECBEA009C5D6A /* Typealiases.swift */,
 				E1F82EAC22F395FB008C2D13 /* Operators.swift */,
 				E17C169C22F59267005BA34A /* Services */,
 				E17C16A522F5934C005BA34A /* Classes */,
@@ -733,13 +736,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C5114922FECBEA009C5D6A /* Typealiases.swift in Sources */,
 				CED25DA322F87522003B44BA /* Cache+Temporary.swift in Sources */,
 				E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */,
 				E1C5114022FEAE03009C5D6A /* Fallback.swift in Sources */,
 				E17E86D022F6271E00102D0E /* StorageManager.swift in Sources */,
 				E17E86E322F642DE00102D0E /* StorageProvider.swift in Sources */,
 				CE0684C822F9620700D991F7 /* NSLock+Extension.swift in Sources */,
+				E18E5A7222FF2725006FD733 /* CollectBuilder.swift in Sources */,
 				D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */,
 				E1303AA322F777A100DE9CAC /* LosslessStringConvertible+Extension.swift in Sources */,
 				E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */,
@@ -747,6 +750,7 @@
 				CED25DA522F8754B003B44BA /* Cache+Persistent.swift in Sources */,
 				E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */,
 				CED25D9822F84E8E003B44BA /* Storage+UserDefaults.swift in Sources */,
+				E18E5A7422FF2746006FD733 /* FallbackBuilder.swift in Sources */,
 				E17E86FD22F656D700102D0E /* Storage+Keychain.swift in Sources */,
 				E17E86FC22F656D700102D0E /* Keychain+Constants.swift in Sources */,
 				E17E86DE22F6271E00102D0E /* PlainError.swift in Sources */,

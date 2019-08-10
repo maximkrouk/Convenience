@@ -305,6 +305,7 @@ extension AFResult {
 
 public extension AFResult {
     
+    /// Plain swift result.
     var swiftResult: Result<Value, Error> {
         switch self {
         case let .success(value):
@@ -314,8 +315,12 @@ public extension AFResult {
         }
     }
     
+    /// Result without a value.
+    ///
+    /// Returns self, mapped to AFResult where Value is Void
     var void: AFResult<Void> { map{ _ in return }}
     
+    /// Returns error?.bag.
     var errorBag: ErrorBag? { error?.bag }
     
 }
