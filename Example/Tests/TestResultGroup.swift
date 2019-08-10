@@ -1,17 +1,14 @@
 //
 //  TestResultGroup.swift
-//  Convenience_Example
+//  
 //
-//  Created by Maxim Krouk on 8/9/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Created by Maxim Krouk on 8/10/19.
 //
 
-import Foundation
+import Convenience
 
-typealias RegexTestGroup = TestGroup<String>
-
-struct TestResultGroup<T> {
+struct TestResultGroup {
     
-    let results: [Result<T, Error>]
+    let results: [AFResult<Void>]
     
 }

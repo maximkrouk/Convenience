@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/maximkrouk/Develop/Swift/Frameworks/Convenience/Example/Tests/TestResultGroup.swift">
+   </FileRef>
+   <FileRef
       location = "group:Convenience.xcodeproj">
    </FileRef>
    <FileRef

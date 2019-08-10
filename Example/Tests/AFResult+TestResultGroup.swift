@@ -10,6 +10,6 @@ import Convenience
 
 extension AFResult {
     
-    var test: TestResultGroup<Value> { .init(results: [swiftResult]) }
-    
+    var test: TestResultGroup { .init(results: [void]) }
+
 }

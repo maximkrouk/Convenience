@@ -314,6 +314,8 @@ public extension AFResult {
         }
     }
     
+    var void: AFResult<Void> { map{ _ in return }}
+    
     var errorBag: ErrorBag? { error?.bag }
     
 }

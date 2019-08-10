@@ -16,10 +16,11 @@ public struct ErrorBag: Error {
     }
     
     public init(error: Error, _ errors: Error..., description: String? = nil) {
-        self.init(errors, description: description)
+        self.init([error] + errors, description: description)!
     }
     
-    public init(_ errors: Errors, description: String? = nil) {
+    public init?(_ errors: Errors, description: String? = nil) {
+        guard !errors.isEmpty else { return nil }
         self.contents = errors
         self.description = description
     }

@@ -9,7 +9,7 @@ import Foundation
 
 public extension Error {
     
-    var bag: ErrorBag { (self as? ErrorBag).unwrap(default: ErrorBag([self])) }
+    var bag: ErrorBag { (self as? ErrorBag).unwrap(default: ErrorBag([self])!) }
     
 }
 

@@ -23,7 +23,7 @@ public struct CollectBuiler {
                 do { try $0() }
                 catch { errors.append(error) }
             }
-            guard errors.isEmpty else { throw ErrorBag(errors) }
+            guard errors.isEmpty else { throw ErrorBag(errors)! }
         }
     }
 }
