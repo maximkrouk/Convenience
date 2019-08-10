@@ -45,6 +45,10 @@
 		E17E870122F6570200102D0E /* CF+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86F122F653E300102D0E /* CF+Extension.swift */; };
 		E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870322F657DD00102D0E /* Bool+Extension.swift */; };
 		E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870522F6ED0400102D0E /* Data+Decode.swift */; };
+		E1C5114022FEAE03009C5D6A /* Fallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5113F22FEAE03009C5D6A /* Fallback.swift */; };
+		E1C5114422FEC12A009C5D6A /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114322FEC12A009C5D6A /* Collect.swift */; };
+		E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114622FEC19C009C5D6A /* ErrorBag.swift */; };
+		E1C5114922FECBEA009C5D6A /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114822FECBEA009C5D6A /* Typealiases.swift */; };
 		E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */; };
 		E1ECB43622F49331004ACB9F /* git.style.spec.md in Resources */ = {isa = PBXBuildFile; fileRef = E1ECB43522F49331004ACB9F /* git.style.spec.md */; };
 		E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EAC22F395FB008C2D13 /* Operators.swift */; };
@@ -125,6 +129,10 @@
 		E17E870322F657DD00102D0E /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		E17E870522F6ED0400102D0E /* Data+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decode.swift"; sourceTree = "<group>"; };
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E1C5113F22FEAE03009C5D6A /* Fallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fallback.swift; sourceTree = "<group>"; };
+		E1C5114322FEC12A009C5D6A /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
+		E1C5114622FEC19C009C5D6A /* ErrorBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBag.swift; sourceTree = "<group>"; };
+		E1C5114822FECBEA009C5D6A /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		E1ECB43222F492C2004ACB9F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		E1ECB43522F49331004ACB9F /* git.style.spec.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = git.style.spec.md; sourceTree = "<group>"; };
 		E1F82EAC22F395FB008C2D13 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -354,6 +362,7 @@
 		E17C169C22F59267005BA34A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E1C5113E22FEADE3009C5D6A /* ErrorHandling */,
 				CED25D8922F83A4A003B44BA /* Validation */,
 				E17C169E22F59273005BA34A /* Storage */,
 			);
@@ -420,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				E17E86DD22F6271E00102D0E /* PlainError.swift */,
+				E1C5114622FEC19C009C5D6A /* ErrorBag.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -453,6 +463,31 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		E1C5113E22FEADE3009C5D6A /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5114222FEC118009C5D6A /* Collect */,
+				E1C5114122FEC10B009C5D6A /* Fallback */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		E1C5114122FEC10B009C5D6A /* Fallback */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5113F22FEAE03009C5D6A /* Fallback.swift */,
+			);
+			path = Fallback;
+			sourceTree = "<group>";
+		};
+		E1C5114222FEC118009C5D6A /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5114322FEC12A009C5D6A /* Collect.swift */,
+			);
+			path = Collect;
+			sourceTree = "<group>";
+		};
 		E1ECB43422F4931D004ACB9F /* Guidlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +499,7 @@
 		E1F82EA622F39542008C2D13 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E1C5114822FECBEA009C5D6A /* Typealiases.swift */,
 				E1F82EAC22F395FB008C2D13 /* Operators.swift */,
 				E17C169C22F59267005BA34A /* Services */,
 				E17C16A522F5934C005BA34A /* Classes */,
@@ -674,7 +710,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C5114922FECBEA009C5D6A /* Typealiases.swift in Sources */,
 				CED25DA322F87522003B44BA /* Cache+Temporary.swift in Sources */,
+				E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */,
+				E1C5114022FEAE03009C5D6A /* Fallback.swift in Sources */,
 				E17E86D022F6271E00102D0E /* StorageManager.swift in Sources */,
 				E17E86E322F642DE00102D0E /* StorageProvider.swift in Sources */,
 				CE0684C822F9620700D991F7 /* NSLock+Extension.swift in Sources */,
@@ -689,6 +728,7 @@
 				E17E86FC22F656D700102D0E /* Keychain+Constants.swift in Sources */,
 				E17E86DE22F6271E00102D0E /* PlainError.swift in Sources */,
 				E17E870022F656D700102D0E /* Keychain+Result.swift in Sources */,
+				E1C5114422FEC12A009C5D6A /* Collect.swift in Sources */,
 				E1303AA622F7784F00DE9CAC /* Collection+Subscript.swift in Sources */,
 				E116409A22FA157200FE2E8D /* Validator.swift in Sources */,
 				E17E86CD22F5A64500102D0E /* Storage.swift in Sources */,
