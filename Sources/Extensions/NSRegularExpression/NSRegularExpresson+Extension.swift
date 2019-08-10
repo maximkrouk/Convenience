@@ -71,7 +71,7 @@ public extension Regex {
     static func words(_ value: Bool = true, allowSpaces: Bool = true) -> Regex {
         let not = value ? "" : "^"
         let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[\\w\(spaces)]*$".regex()
+        return "^[\(not)\\w\(spaces)]*$".regex()
     }
     
     /// Regex getter for a alphabetic or non-alphabetic string regex.
