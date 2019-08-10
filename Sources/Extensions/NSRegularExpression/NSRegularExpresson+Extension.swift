@@ -68,7 +68,11 @@ public extension Regex {
     ///
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func words(allowSpaces: Bool = true) -> Regex { (allowSpaces ? "^[\\s\\w]*$" : "^\\w*$").regex() }
+    static func words(_ value: Bool = true, allowSpaces: Bool = true) -> Regex {
+        let not = value ? "" : "^"
+        let spaces = allowSpaces == value ? "\\s" : ""
+        return "^[\(not)\\w\(spaces)]*$".regex()
+    }
     
     /// Regex getter for a alphabetic or non-alphabetic string regex.
     ///
