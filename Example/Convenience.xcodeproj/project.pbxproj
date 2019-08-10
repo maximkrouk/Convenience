@@ -18,7 +18,7 @@
 		CEA54A6722FDA69A00AFA476 /* TestGroup+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6522FDA68500AFA476 /* TestGroup+Builder.swift */; };
 		CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */; };
 		CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */; };
-		E1C5114F22FED99D009C5D6A /* TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114E22FED99D009C5D6A /* TestResultGroup.swift */; };
+		E18E5A7622FF47FC006FD733 /* TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroup.swift; sourceTree = "<group>"; };
 		CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AFResult+TestResultGroup.swift"; sourceTree = "<group>"; };
 		D95306077BAAC4077CDD1805 /* Pods-Convenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Tests.release.xcconfig"; path = "Target Support Files/Pods-Convenience_Tests/Pods-Convenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E1C5114E22FED99D009C5D6A /* TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestResultGroup.swift; path = /Users/maximkrouk/Develop/Swift/Frameworks/Convenience/Example/Tests/TestResultGroup.swift; sourceTree = "<absolute>"; };
+		E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestResultGroup.swift; path = /Users/maximkrouk/Develop/Swift/Frameworks/Convenience/Example/Tests/TestResultGroup.swift; sourceTree = "<absolute>"; };
 		F8526CD169EBFBB7873A6F03 /* Pods_Convenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Convenience_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */,
-				E1C5114E22FED99D009C5D6A /* TestResultGroup.swift */,
+				E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */,
 				CEA54A6522FDA68500AFA476 /* TestGroup+Builder.swift */,
 			);
 			name = TestGroup;
@@ -380,7 +380,7 @@
 			files = (
 				CEA54A6322FD958300AFA476 /* RegexTests.swift in Sources */,
 				CEA54A6722FDA69A00AFA476 /* TestGroup+Builder.swift in Sources */,
-				E1C5114F22FED99D009C5D6A /* TestResultGroup.swift in Sources */,
+				E18E5A7622FF47FC006FD733 /* TestResultGroup.swift in Sources */,
 				CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */,
 				CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */,
 			);
