@@ -10,6 +10,7 @@ import Convenience
 
 extension AFResult {
     
+    /// Wraps self by TestResultGroup for compatibility with TestGroup.
     var test: TestResultGroup { .init(results: [void]) }
 
 }
