@@ -19,3 +19,14 @@ public struct PlainError: Error {
     }
     
 }
+
+extension PlainError: ExpressibleByStringLiteral {
+    
+    /// Creates an instance initialized to the given string value.
+    ///
+    /// - Parameter value: The value of the new instance.
+    public init(stringLiteral value: String) {
+        localizedDescription = value
+    }
+    
+}

@@ -314,4 +314,6 @@ public extension AFResult {
         }
     }
     
+    var errorBag: ErrorBag? { error?.bag }
+    
 }
