@@ -26,4 +26,69 @@ class RegexTests: XCTestCase {
         }
     }
     
+    func testWords() {
+        TestGroup.assert(success: true) {
+            Regex.words().match("string_1").test
+            Regex.words().match(" string_1 ").test
+            Regex.words(true).match("string_1").test
+            Regex.words(true).match(" string_1 ").test
+            Regex.words(false).match(".").test
+            Regex.words(false).match(" . ").test
+            Regex.words(false).match(".").test
+            Regex.words(false).match(" . ").test
+            Regex.words(allowSpaces: true).match("string_1").test
+            Regex.words(allowSpaces: true).match(" string_1 ").test
+            Regex.words(allowSpaces: false).match("string_1").test
+            Regex.words(true, allowSpaces: true).match("string_1").test
+            Regex.words(true, allowSpaces: true).match(" string_1 ").test
+            Regex.words(true, allowSpaces: false).match("string_1").test
+            Regex.words(false, allowSpaces: true).match(".").test
+            Regex.words(false, allowSpaces: true).match(" . ").test
+            Regex.words(false, allowSpaces: true).match(".").test
+            Regex.words(false, allowSpaces: true).match(" . ").test
+            Regex.words(false, allowSpaces: false).match(".").test
+            Regex.words(false, allowSpaces: false).match(".").test
+        }
+        
+        TestGroup.assert(success: false) {
+            Regex.words().match(".").test
+            Regex.words().match(" . ").test
+            Regex.words().match(".string_1").test
+            Regex.words().match(" .string_1 ").test
+            Regex.words(true).match(".").test
+            Regex.words(true).match(" . ").test
+            Regex.words(true).match(".string_1").test
+            Regex.words(true).match(" .string_1 ").test
+            Regex.words(false).match("string_1").test
+            Regex.words(false).match(" string_1 ").test
+            Regex.words(false).match(".string_1").test
+            Regex.words(false).match(" .string_1 ").test
+            Regex.words(allowSpaces: true).match(".").test
+            Regex.words(allowSpaces: true).match(" . ").test
+            Regex.words(allowSpaces: true).match(".string_1").test
+            Regex.words(allowSpaces: true).match(" .string_1 ").test
+            Regex.words(allowSpaces: false).match(".").test
+            Regex.words(allowSpaces: false).match(" . ").test
+            Regex.words(allowSpaces: false).match(".string_1").test
+            Regex.words(allowSpaces: false).match(" .string_1 ").test
+            Regex.words(allowSpaces: false).match(" string_1 ").test
+            Regex.words(true, allowSpaces: true).match(".").test
+            Regex.words(true, allowSpaces: true).match(" . ").test
+            Regex.words(true, allowSpaces: true).match(".string_1").test
+            Regex.words(true, allowSpaces: true).match(" .string_1 ").test
+            Regex.words(true, allowSpaces: false).match(".").test
+            Regex.words(true, allowSpaces: false).match(" . ").test
+            Regex.words(true, allowSpaces: false).match(".string_1").test
+            Regex.words(true, allowSpaces: false).match(" .string_1 ").test
+            Regex.words(true, allowSpaces: false).match(" string_1 ").test
+            Regex.words(false, allowSpaces: true).match("string_1").test
+            Regex.words(false, allowSpaces: true).match(" string_1 ").test
+            Regex.words(false, allowSpaces: true).match(".string_1").test
+            Regex.words(false, allowSpaces: true).match(" .string_1 ").test
+            Regex.words(false, allowSpaces: false).match(" . ").test
+            Regex.words(false, allowSpaces: false).match(".string_1").test
+            Regex.words(false, allowSpaces: false).match(" .string_1 ").test
+        }
+    }
+    
 }
