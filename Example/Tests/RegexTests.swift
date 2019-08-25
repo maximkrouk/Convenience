@@ -238,4 +238,53 @@ class RegexTests: XCTestCase {
         }
     }
     
+    func testBinary() {
+        TestGroup.assert(success: true) {
+            Regex.hex().match("1010").test
+            Regex.hex(true).match("1010").test
+            Regex.hex(true, allowSpaces: true).match("1010").test
+            Regex.hex(true, allowSpaces: true).match(" 1010 ").test
+            Regex.hex(true, allowSpaces: false).match("1010").test
+            Regex.hex(false).match(".").test
+            Regex.hex(false, allowSpaces: true).match(" . ").test
+            Regex.hex(false, allowSpaces: false).match(".").test
+        }
+        
+        TestGroup.assert(success: false) {
+            Regex.hex().match(".").test
+            Regex.hex().match(" . ").test
+            Regex.hex().match(" 1010 ").test
+            Regex.hex().match("string_1010").test
+            Regex.hex().match(" string_1010 ").test
+            Regex.hex(true).match(".").test
+            Regex.hex(true).match(" . ").test
+            Regex.hex(true).match(" 1010 ").test
+            Regex.hex(true).match("string_1010").test
+            Regex.hex(true).match(" string_1010 ").test
+            Regex.hex(true, allowSpaces: true).match(".").test
+            Regex.hex(true, allowSpaces: true).match(" . ").test
+            Regex.hex(true, allowSpaces: true).match("string_1010").test
+            Regex.hex(true, allowSpaces: true).match(" string_1010 ").test
+            Regex.hex(true, allowSpaces: false).match(".").test
+            Regex.hex(true, allowSpaces: false).match(" . ").test
+            Regex.hex(true, allowSpaces: false).match(" 1010 ").test
+            Regex.hex(true, allowSpaces: false).match("string_1010").test
+            Regex.hex(true, allowSpaces: false).match(" string_1010 ").test
+            Regex.hex(false).match(" . ").test
+            Regex.hex(false).match("1010").test
+            Regex.hex(false).match(" 1010 ").test
+            Regex.hex(false).match("string_1010").test
+            Regex.hex(false).match(" string_1010 ").test
+            Regex.hex(false, allowSpaces: true).match("1010").test
+            Regex.hex(false, allowSpaces: true).match(" 1010 ").test
+            Regex.hex(false, allowSpaces: true).match("string_1010").test
+            Regex.hex(false, allowSpaces: true).match(" string_1010 ").test
+            Regex.hex(false, allowSpaces: false).match("1010").test
+            Regex.hex(false, allowSpaces: false).match(" 1010 ").test
+            Regex.hex(false, allowSpaces: false).match("string_1010").test
+            Regex.hex(false, allowSpaces: false).match(" string_1010 ").test
+            Regex.hex(false, allowSpaces: false).match(" . ").test
+        }
+    }
+    
 }
