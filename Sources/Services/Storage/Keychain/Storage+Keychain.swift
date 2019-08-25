@@ -91,7 +91,7 @@ public extension Storage {
         private(set) public var bool: Provider<Bool>!
         
         /// Use this instance to store and access String keychain items.
-        private (set) public var string: Provider<String>!
+        private(set) public var string: Provider<String>!
         
         // MARK: - Init
         
