@@ -91,4 +91,53 @@ class RegexTests: XCTestCase {
         }
     }
     
+    func testLetters() {
+        TestGroup.assert(success: true) {
+            Regex.letters().match("string").test
+            Regex.letters(true).match("string").test
+            Regex.letters(true, allowSpaces: true).match("string").test
+            Regex.letters(true, allowSpaces: true).match(" string ").test
+            Regex.letters(true, allowSpaces: false).match("string").test
+            Regex.letters(false).match(".").test
+            Regex.letters(false, allowSpaces: true).match(" . ").test
+            Regex.letters(false, allowSpaces: false).match(".").test
+        }
+        
+        TestGroup.assert(success: false) {
+            Regex.letters().match(".").test
+            Regex.letters().match(" . ").test
+            Regex.letters().match(" string ").test
+            Regex.letters().match("string_1").test
+            Regex.letters().match(" string_1 ").test
+            Regex.letters(true).match(".").test
+            Regex.letters(true).match(" . ").test
+            Regex.letters(true).match(" string ").test
+            Regex.letters(true).match("string_1").test
+            Regex.letters(true).match(" string_1 ").test
+            Regex.letters(true, allowSpaces: true).match(".").test
+            Regex.letters(true, allowSpaces: true).match(" . ").test
+            Regex.letters(true, allowSpaces: true).match("string_1").test
+            Regex.letters(true, allowSpaces: true).match(" string_1 ").test
+            Regex.letters(true, allowSpaces: false).match(".").test
+            Regex.letters(true, allowSpaces: false).match(" . ").test
+            Regex.letters(true, allowSpaces: false).match(" string ").test
+            Regex.letters(true, allowSpaces: false).match("string_1").test
+            Regex.letters(true, allowSpaces: false).match(" string_1 ").test
+            Regex.letters(false).match(" . ").test
+            Regex.letters(false).match("string").test
+            Regex.letters(false).match(" string ").test
+            Regex.letters(false).match("string_1").test
+            Regex.letters(false).match(" string_1 ").test
+            Regex.letters(false, allowSpaces: true).match("string").test
+            Regex.letters(false, allowSpaces: true).match(" string ").test
+            Regex.letters(false, allowSpaces: true).match("string_1").test
+            Regex.letters(false, allowSpaces: true).match(" string_1 ").test
+            Regex.letters(false, allowSpaces: false).match("string").test
+            Regex.letters(false, allowSpaces: false).match(" string ").test
+            Regex.letters(false, allowSpaces: false).match("string_1").test
+            Regex.letters(false, allowSpaces: false).match(" string_1 ").test
+            Regex.letters(false, allowSpaces: false).match(" . ").test
+        }
+    }
+    
 }
