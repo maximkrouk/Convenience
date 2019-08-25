@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Storage.Cache {
+public extension Storage.Cache {
     
     class Persistent: StorageManager {
         private let lock = NSLock()

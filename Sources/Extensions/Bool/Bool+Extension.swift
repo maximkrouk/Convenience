@@ -9,9 +9,6 @@ import Foundation
 
 public extension Bool {
     
-    /// Returns data, initialized with [0] if self is false, or with [1] otherwise.
-    var data: Data { Data([self ? 1 : 0]) }
-    
     var toggled: Bool { !self }
     
 }

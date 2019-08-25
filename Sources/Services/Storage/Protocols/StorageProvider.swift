@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol StorageProvider {
+public protocol StorageProvider: class {
     associatedtype Value
     
     // MARK: - Subscripts

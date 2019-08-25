@@ -25,10 +25,10 @@ public func modification<T>(of object: T, closure: (inout T) -> Void) -> T {
 ///
 /// - Parameter object: The instance.
 /// - Parameter closure: Modification.
-public func modify<T>(object: inout T, closure: (inout T) -> Void) { closure(&object) }
+public func modify<T>(_ object: inout T, closure: (inout T) -> Void) { closure(&object) }
 
 /// Performs specified modification on the instance of a class.
 ///
 /// - Parameter object: Instance of a class.
 /// - Parameter closure: Modification.
-public func modify<T: AnyObject>(object: T, closure: (T) -> Void) { closure(object) }
+public func modify<T: AnyObject>(_ object: T, closure: (T) -> Void) { closure(object) }

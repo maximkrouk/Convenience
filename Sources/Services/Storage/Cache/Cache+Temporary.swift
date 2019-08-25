@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Storage.Cache {
+public extension Storage.Cache {
     
     class Temporary: StorageManager {
         private let storage = NSCache<NSString, Item>()

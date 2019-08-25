@@ -9,11 +9,35 @@
 import UIKit
 import Convenience
 
+fileprivate extension StorageProvider {
+    
+    subscript(_ key: ViewController.Key) -> Value? {
+        get { self[key.rawValue] }
+        set { self[key.rawValue] = newValue }
+    }
+    
+}
+
 class ViewController: UIViewController {
+    
+    enum Key: String {
+        case bool = "ViewController.Key.bool"
+    }
+    
+    private(set) public var label: UILabel = {
+        modification(of: .init()) { $0.textAlignment = .center }
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let item = Storage.Cache.persistent.bool[.bool].unwrap()
+        modify(label) {
+            view.addSubview($0)
+            $0.frame = view.frame
+            $0.text = item ? "true" : "false"
+        }
+        Storage.Cache.persistent.bool[.bool] = !item
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +46,5 @@ class ViewController: UIViewController {
     }
 
 }
+
 
