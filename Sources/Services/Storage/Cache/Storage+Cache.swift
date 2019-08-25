@@ -12,16 +12,8 @@ public extension Storage {
     final class Cache {
         public let kind: Kind
         
-        public static let `default` = Cache(.memory)
-        
-        /// Returns `Cache.default.data` instance.
-        public static var data: Provider<Data> { Cache.default.data }
-        
-        /// Returns `Cache.default.bool` instance.
-        public static var bool: Provider<Bool> { Cache.default.bool }
-        
-        /// Returns `Cache.default.string` instance.
-        public static var string: Provider<String> { Cache.default.string }
+        public static let temporary = Cache(.memory)
+        public static let persistent = Cache(.storage)
         
         /// Use this instance to store and access Data keychain items.
         private(set) public var data: Provider<Data>!
@@ -33,7 +25,15 @@ public extension Storage {
         private (set) public var string: Provider<String>!
         
         public init(_ kind: Kind) {
-            let manager: StorageManager = kind == .memory ? Temporary() : Persistent()
+            let manager: StorageManager
+            switch kind {
+            case .memory:
+                manager = Temporary()
+            case .storage:
+                manager = Persistent()
+            case let .custom(storageManager):
+                manager = storageManager
+            }
             self.kind   =  kind
             self.data   = .init(storageManager: manager)
             self.bool   = .init(storageManager: manager)
@@ -49,6 +49,7 @@ public extension Storage.Cache {
     enum Kind {
         case memory
         case storage
+        case custom(StorageManager)
     }
     
 }

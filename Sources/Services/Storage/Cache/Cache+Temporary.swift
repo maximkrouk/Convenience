@@ -10,27 +10,27 @@ import Foundation
 extension Storage.Cache {
     
     class Temporary: StorageManager {
-        private let standard = NSCache<NSString, Item>()
+        private let storage = NSCache<NSString, Item>()
         
         public func data(forKey key: String) -> AFResult<Data> {
-            guard let data = standard.object(forKey: key.nsString)?.content else {
+            guard let data = storage.object(forKey: key.nsString)?.content else {
                 return .failure(PlainError("No data found for key: [\(key)]"))
             }
             return .success(data)
         }
                 
         public func save(data: Data, forKey key: String) -> AFResult<Void> {
-            standard.setObject(.init(content: data), forKey: key.nsString)
+            storage.setObject(.init(content: data), forKey: key.nsString)
             return .success(())
         }
                 
         public func delete(key: String) -> AFResult<Void> {
-            standard.removeObject(forKey: key.nsString)
+            storage.removeObject(forKey: key.nsString)
             return .success(())
         }
         
         public func clear() -> AFResult<Void> {
-            standard.removeAllObjects()
+            storage.removeAllObjects()
             return .success(())
         }
     }
