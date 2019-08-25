@@ -13,7 +13,7 @@ extension Storage.Cache {
         private let lock = NSLock()
         private let fileManager = FileManager.default
         public var directory: URL {
-            cacheDirectory.appendingPathComponent("./\(Bundle.main.bundleIdentifier.unwrap(default: "ConvenienceTempDir"))")
+            cacheDirectory.appendingPathComponent("\(Bundle.main.bundleIdentifier.unwrap(default: "ConvenienceTempDir"))")
         }
         
         public init() {
@@ -34,8 +34,8 @@ extension Storage.Cache {
         @discardableResult
         public func save(data: Data, forKey key: String) -> AFResult<Void> {
             lock.execute {
+                unsafeDelete(key: key)
                 let path = url(for: key).path
-                delete(key: key)
                 let result = fileManager.createFile(atPath: path, contents: data, attributes: nil)
                 return result ?
                     .success(()) :
@@ -45,15 +45,7 @@ extension Storage.Cache {
         
         @discardableResult
         public func delete(key: String) -> AFResult<Void> {
-            lock.execute {
-                do {
-                    let path = url(for: key).path
-                    if fileManager.fileExists(atPath: path) { try fileManager.removeItem(atPath: path) }
-                    return .success(())
-                } catch {
-                    return .failure(error)
-                }
-            }
+            lock.execute { unsafeDelete(key: key) }
         }
 
         @discardableResult
@@ -66,6 +58,17 @@ extension Storage.Cache {
                 } catch {
                     return .failure(error)
                 }
+            }
+        }
+        
+        @discardableResult
+        private func unsafeDelete(key: String) -> AFResult<Void> {
+            do {
+                let path = url(for: key).path
+                if fileManager.fileExists(atPath: path) { try fileManager.removeItem(atPath: path) }
+                return .success(())
+            } catch {
+                return .failure(error)
             }
         }
     }
@@ -81,6 +84,6 @@ private extension Storage.Cache.Persistent {
                              create: false)
     }
     
-    func url(for key: String) -> URL { directory.appendingPathComponent("(key).tmp", isDirectory: false) }
+    func url(for key: String) -> URL { directory.appendingPathComponent("\(key).tmp", isDirectory: false) }
     
 }
