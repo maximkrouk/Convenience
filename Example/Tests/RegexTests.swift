@@ -189,4 +189,53 @@ class RegexTests: XCTestCase {
         }
     }
     
+    func testHex() {
+        TestGroup.assert(success: true) {
+            Regex.hex().match("0123456789abcdefABCDEF").test
+            Regex.hex(true).match("0123456789abcdefABCDEF").test
+            Regex.hex(true, allowSpaces: true).match("0123456789abcdefABCDEF").test
+            Regex.hex(true, allowSpaces: true).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(true, allowSpaces: false).match("0123456789abcdefABCDEF").test
+            Regex.hex(false).match(".").test
+            Regex.hex(false, allowSpaces: true).match(" . ").test
+            Regex.hex(false, allowSpaces: false).match(".").test
+        }
+        
+        TestGroup.assert(success: false) {
+            Regex.hex().match(".").test
+            Regex.hex().match(" . ").test
+            Regex.hex().match(" 0123456789abcdefABCDEF ").test
+            Regex.hex().match("string_0123456789abcdefABCDEF").test
+            Regex.hex().match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(true).match(".").test
+            Regex.hex(true).match(" . ").test
+            Regex.hex(true).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(true).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(true).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(true, allowSpaces: true).match(".").test
+            Regex.hex(true, allowSpaces: true).match(" . ").test
+            Regex.hex(true, allowSpaces: true).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(true, allowSpaces: true).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(true, allowSpaces: false).match(".").test
+            Regex.hex(true, allowSpaces: false).match(" . ").test
+            Regex.hex(true, allowSpaces: false).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(true, allowSpaces: false).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(true, allowSpaces: false).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(false).match(" . ").test
+            Regex.hex(false).match("0123456789abcdefABCDEF").test
+            Regex.hex(false).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(false).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(false).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(false, allowSpaces: true).match("0123456789abcdefABCDEF").test
+            Regex.hex(false, allowSpaces: true).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(false, allowSpaces: true).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(false, allowSpaces: true).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(false, allowSpaces: false).match("0123456789abcdefABCDEF").test
+            Regex.hex(false, allowSpaces: false).match(" 0123456789abcdefABCDEF ").test
+            Regex.hex(false, allowSpaces: false).match("string_0123456789abcdefABCDEF").test
+            Regex.hex(false, allowSpaces: false).match(" string_0123456789abcdefABCDEF ").test
+            Regex.hex(false, allowSpaces: false).match(" . ").test
+        }
+    }
+    
 }
