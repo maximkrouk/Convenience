@@ -140,4 +140,53 @@ class RegexTests: XCTestCase {
         }
     }
     
+    func testDigits() {
+        TestGroup.assert(success: true) {
+            Regex.digits().match("0123456789").test
+            Regex.digits(true).match("0123456789").test
+            Regex.digits(true, allowSpaces: true).match("0123456789").test
+            Regex.digits(true, allowSpaces: true).match(" 0123456789 ").test
+            Regex.digits(true, allowSpaces: false).match("0123456789").test
+            Regex.digits(false).match(".").test
+            Regex.digits(false, allowSpaces: true).match(" . ").test
+            Regex.digits(false, allowSpaces: false).match(".").test
+        }
+        
+        TestGroup.assert(success: false) {
+            Regex.digits().match(".").test
+            Regex.digits().match(" . ").test
+            Regex.digits().match(" 0123456789 ").test
+            Regex.digits().match("string_0123456789").test
+            Regex.digits().match(" string_0123456789 ").test
+            Regex.digits(true).match(".").test
+            Regex.digits(true).match(" . ").test
+            Regex.digits(true).match(" 0123456789 ").test
+            Regex.digits(true).match("string_0123456789").test
+            Regex.digits(true).match(" string_0123456789 ").test
+            Regex.digits(true, allowSpaces: true).match(".").test
+            Regex.digits(true, allowSpaces: true).match(" . ").test
+            Regex.digits(true, allowSpaces: true).match("string_0123456789").test
+            Regex.digits(true, allowSpaces: true).match(" string_0123456789 ").test
+            Regex.digits(true, allowSpaces: false).match(".").test
+            Regex.digits(true, allowSpaces: false).match(" . ").test
+            Regex.digits(true, allowSpaces: false).match(" 0123456789 ").test
+            Regex.digits(true, allowSpaces: false).match("string_0123456789").test
+            Regex.digits(true, allowSpaces: false).match(" string_0123456789 ").test
+            Regex.digits(false).match(" . ").test
+            Regex.digits(false).match("0123456789").test
+            Regex.digits(false).match(" 0123456789 ").test
+            Regex.digits(false).match("string_0123456789").test
+            Regex.digits(false).match(" string_0123456789 ").test
+            Regex.digits(false, allowSpaces: true).match("0123456789").test
+            Regex.digits(false, allowSpaces: true).match(" 0123456789 ").test
+            Regex.digits(false, allowSpaces: true).match("string_0123456789").test
+            Regex.digits(false, allowSpaces: true).match(" string_0123456789 ").test
+            Regex.digits(false, allowSpaces: false).match("0123456789").test
+            Regex.digits(false, allowSpaces: false).match(" 0123456789 ").test
+            Regex.digits(false, allowSpaces: false).match("string_0123456789").test
+            Regex.digits(false, allowSpaces: false).match(" string_0123456789 ").test
+            Regex.digits(false, allowSpaces: false).match(" . ").test
+        }
+    }
+    
 }
