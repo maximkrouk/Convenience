@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
     
     /// Returns a string initialized with self and passed encoding.
     func string(using encoding: String.Encoding) -> String? { String(data: self, encoding: encoding) }
