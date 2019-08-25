@@ -47,6 +47,7 @@
 		E17E870622F6ED0400102D0E /* Data+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E870522F6ED0400102D0E /* Data+Decode.swift */; };
 		E18E5A7222FF2725006FD733 /* CollectBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7122FF2725006FD733 /* CollectBuilder.swift */; };
 		E18E5A7422FF2746006FD733 /* FallbackBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7322FF2746006FD733 /* FallbackBuilder.swift */; };
+		E1B24BC52312AFB8005C349F /* Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B24BC42312AFB8005C349F /* Modification.swift */; };
 		E1C5114022FEAE03009C5D6A /* Fallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5113F22FEAE03009C5D6A /* Fallback.swift */; };
 		E1C5114422FEC12A009C5D6A /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114322FEC12A009C5D6A /* Collect.swift */; };
 		E1C5114722FEC19C009C5D6A /* ErrorBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5114622FEC19C009C5D6A /* ErrorBag.swift */; };
@@ -135,6 +136,7 @@
 		E186B72F193DD428CE21049458A68D4C /* Pods-Convenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Convenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E18E5A7122FF2725006FD733 /* CollectBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectBuilder.swift; sourceTree = "<group>"; };
 		E18E5A7322FF2746006FD733 /* FallbackBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackBuilder.swift; sourceTree = "<group>"; };
+		E1B24BC42312AFB8005C349F /* Modification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modification.swift; sourceTree = "<group>"; };
 		E1C5113F22FEAE03009C5D6A /* Fallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fallback.swift; sourceTree = "<group>"; };
 		E1C5114322FEC12A009C5D6A /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
 		E1C5114622FEC19C009C5D6A /* ErrorBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBag.swift; sourceTree = "<group>"; };
@@ -478,6 +480,14 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		E1B24BC32312AFA0005C349F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E1B24BC42312AFB8005C349F /* Modification.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		E1C5113E22FEADE3009C5D6A /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +538,7 @@
 				E17C169C22F59267005BA34A /* Services */,
 				E17C16A522F5934C005BA34A /* Classes */,
 				E1F82EA722F39559008C2D13 /* Extensions */,
+				E1B24BC32312AFA0005C349F /* Other */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -771,6 +782,7 @@
 				E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */,
 				CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */,
 				E116409822FA156600FE2E8D /* AnyValidator.swift in Sources */,
+				E1B24BC52312AFB8005C349F /* Modification.swift in Sources */,
 				E1ECB43322F492C2004ACB9F /* Optional+Unwrap.swift in Sources */,
 				E1303A9E22F7762900DE9CAC /* UIColor+Convert.swift in Sources */,
 				E17C16A922F59381005BA34A /* AFResult.swift in Sources */,
@@ -1006,7 +1018,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				MODULEMAP_FILE = "Target Support Files/Convenience/Convenience.modulemap";
 				PRODUCT_MODULE_NAME = Convenience;
 				PRODUCT_NAME = Convenience;
@@ -1040,7 +1052,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				MODULEMAP_FILE = "Target Support Files/Convenience/Convenience.modulemap";
 				PRODUCT_MODULE_NAME = Convenience;
 				PRODUCT_NAME = Convenience;
