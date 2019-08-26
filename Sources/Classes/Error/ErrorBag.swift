@@ -39,7 +39,7 @@ public struct ErrorBag: Error {
     /// - Parameter error: First error.
     /// - Parameter errors: Errors, optionally passed to the initializer.
     /// - Parameter description: Initial description, used as a custom localizedDescription, see it's comments for more info.
-    public init(error: Error, _ errors: Error..., description: String? = nil) {
+    public init(errors error: Error, _ errors: Error..., description: String? = nil) {
         self.init([error] + errors, description: description)!
     }
     
