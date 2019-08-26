@@ -14,11 +14,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B6A5CD56F76AC0DEA1CDA201 /* Pods_Convenience_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8526CD169EBFBB7873A6F03 /* Pods_Convenience_Tests.framework */; };
+		CE39C9A42313F02D0091277A /* TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39C9A22313EE050091277A /* TestResultGroup.swift */; };
 		CEA54A6322FD958300AFA476 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6122FD951B00AFA476 /* RegexTests.swift */; };
 		CEA54A6722FDA69A00AFA476 /* TestGroup+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6522FDA68500AFA476 /* TestGroup+Builder.swift */; };
 		CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */; };
 		CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */; };
-		E18E5A7622FF47FC006FD733 /* TestResultGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +48,12 @@
 		8A407FB14D00334D9ADAD59B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8F7DE31C65EECB270E25AF76 /* Pods-Convenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Example.debug.xcconfig"; path = "Target Support Files/Pods-Convenience_Example/Pods-Convenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		90C32F75371EAA2A4FB0CDE5 /* Pods-Convenience_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Example.release.xcconfig"; path = "Target Support Files/Pods-Convenience_Example/Pods-Convenience_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CE39C9A22313EE050091277A /* TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultGroup.swift; sourceTree = "<group>"; };
 		CEA54A6122FD951B00AFA476 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
 		CEA54A6522FDA68500AFA476 /* TestGroup+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestGroup+Builder.swift"; sourceTree = "<group>"; };
 		CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGroup.swift; sourceTree = "<group>"; };
 		CEA54A7622FDCC0800AFA476 /* AFResult+TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AFResult+TestResultGroup.swift"; sourceTree = "<group>"; };
 		D95306077BAAC4077CDD1805 /* Pods-Convenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convenience_Tests.release.xcconfig"; path = "Target Support Files/Pods-Convenience_Tests/Pods-Convenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestResultGroup.swift; path = /Users/maximkrouk/Develop/Swift/Frameworks/Convenience/Example/Tests/TestResultGroup.swift; sourceTree = "<absolute>"; };
 		F8526CD169EBFBB7873A6F03 /* Pods_Convenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Convenience_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA54A6A22FDCAE400AFA476 /* TestGroup.swift */,
-				E18E5A7522FF47FC006FD733 /* TestResultGroup.swift */,
+				CE39C9A22313EE050091277A /* TestResultGroup.swift */,
 				CEA54A6522FDA68500AFA476 /* TestGroup+Builder.swift */,
 			);
 			name = TestGroup;
@@ -380,7 +380,7 @@
 			files = (
 				CEA54A6322FD958300AFA476 /* RegexTests.swift in Sources */,
 				CEA54A6722FDA69A00AFA476 /* TestGroup+Builder.swift in Sources */,
-				E18E5A7622FF47FC006FD733 /* TestResultGroup.swift in Sources */,
+				CE39C9A42313F02D0091277A /* TestResultGroup.swift in Sources */,
 				CEA54A7822FDCC0800AFA476 /* AFResult+TestResultGroup.swift in Sources */,
 				CEA54A6C22FDCAFF00AFA476 /* TestGroup.swift in Sources */,
 			);
