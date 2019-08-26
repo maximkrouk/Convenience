@@ -12,7 +12,7 @@ public typealias Errors = [Error]
 public extension Error {
     
     /// Returns self as ErrorBag or an Error bag, initialized with self if cast failed.
-    var bag: ErrorBag { (self as? ErrorBag).unwrap(default: ErrorBag([self])!) }
+    var bag: ErrorBag { cast(self, to: ErrorBag.self, default: .init(errors: self)) }
     
 }
 
