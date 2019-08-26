@@ -68,10 +68,9 @@ public extension Regex {
     ///
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func words(_ value: Bool = true, allowSpaces: Bool = true) -> Regex {
-        let not = value ? "" : "^"
-        let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)\\w\(spaces)]*$".regex()
+    static func words(allowSpaces: Bool = true) -> Regex {
+        let spaces = allowSpaces ? "\\s" : ""
+        return "^[\\w\(spaces)]*$".regex()
     }
     
     /// Regex getter for a alphabetic or non-alphabetic string regex.
@@ -85,10 +84,9 @@ public extension Regex {
     /// - Parameter value: Specifies if returned regex should match a letter string.
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func letters(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
-        let not = value ? "" : "^"
-        let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:alpha:]\(spaces)]*$".regex()
+    static func letters(allowSpaces: Bool = false) -> Regex {
+        let spaces = allowSpaces ? "\\s" : ""
+        return "^[[:alpha:]\(spaces)]*$".regex()
     }
 
     /// Regex getter for a digital or non-digital string regex.
@@ -102,10 +100,9 @@ public extension Regex {
     /// - Parameter value: Specifies if returned regex should match a digital string.
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func digits(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
-        let not = value ? "" : "^"
-        let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:digit:]\(spaces)]*$".regex()
+    static func digits(allowSpaces: Bool = false) -> Regex {
+        let spaces = allowSpaces ? "\\s" : ""
+        return "^[[:digit:]\(spaces)]*$".regex()
     }
     
     /// Regex getter for a hex or non-hex string regex.
@@ -119,10 +116,9 @@ public extension Regex {
     /// - Parameter value: Specifies if returned regex should match a digital string.
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func hex(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
-        let not = value ? "" : "^"
-        let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)[:xdigit:]\(spaces)]*$".regex()
+    static func hex(allowSpaces: Bool = false) -> Regex {
+        let spaces = allowSpaces ? "\\s" : ""
+        return "^[[:xdigit:]\(spaces)]*$".regex()
     }
     
     /// Regex getter for a binary or non-binary string regex.
@@ -136,10 +132,9 @@ public extension Regex {
     /// - Parameter value: Specifies if returned regex should match a digital string.
     /// - Parameter allowSpaces: Specifies if returned regex should match a word-character string with spaces.
     /// - Returns: Regex that matches any line of word characters.
-    static func binary(_ value: Bool = true, allowSpaces: Bool = false) -> Regex {
-        let not = value ? "" : "^"
-        let spaces = allowSpaces == value ? "\\s" : ""
-        return "^[\(not)0-1\(spaces)]*$".regex()
+    static func binary(allowSpaces: Bool = false) -> Regex {
+        let spaces = allowSpaces ? "\\s" : ""
+        return "^[0-1\(spaces)]*$".regex()
     }
 
     /// Regex getter for a hex-color string regex.
