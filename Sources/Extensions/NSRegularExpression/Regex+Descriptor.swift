@@ -25,9 +25,9 @@ public extension Regex {
                 return error.unwrap(default: PlainError("\(title) should be empty"))
             case Regex.empty(false).pattern:
                 return error.unwrap(default: PlainError("\(title) should not be empty"))
-            case Regex.letters(true, allowSpaces: false).pattern:
+            case Regex.letters(allowSpaces: false).pattern:
                 return error.unwrap(default: PlainError("\(title) should contain latin letters only"))
-            case Regex.digits(true, allowSpaces: false).pattern:
+            case Regex.digits(allowSpaces: false).pattern:
                 return error.unwrap(default: PlainError("\(title) should contain digits only"))
             default:
                 return error.unwrap(default: PlainError("reg not match"))
