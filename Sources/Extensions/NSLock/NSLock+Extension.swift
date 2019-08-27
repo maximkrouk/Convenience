@@ -15,7 +15,7 @@ public extension NSLock {
     ///
     /// - Parameter closure: code block to execute.
     /// - Returns: closure's returned value.
-    func execute<T>(closure: () -> T ) -> T {
+    func execute<T>(closure: () -> T) -> T {
         lock(); defer { unlock() }
         return closure()
     }
