@@ -53,8 +53,8 @@ private extension Storage.Cache.Optimized {
     }
 }
 
-private extension Storage.Cache.Optimized: Codable where Key: Codable, Value: Codable {
-    convenience public init(from decoder: Decoder) throws {
+extension Storage.Cache.Optimized: Codable where Key: Codable, Value: Codable {
+    convenience init(from decoder: Decoder) throws {
         self.init()
 
         let container = try decoder.singleValueContainer()
@@ -62,7 +62,7 @@ private extension Storage.Cache.Optimized: Codable where Key: Codable, Value: Co
         entries.forEach(insert)
     }
 
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(keyTracker.keys.compactMap(entry))
     }
