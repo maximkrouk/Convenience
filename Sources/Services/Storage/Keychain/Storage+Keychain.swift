@@ -109,12 +109,16 @@ public extension Storage {
         
         // MARK: - StorageManager
         
-        public func data(forKey key: String) -> AFResult<Data> {  getData(forKey: key) }
+        public func data<Key: Hashable>(forKey key: Key) -> AFResult<Data> {
+            getData(forKey: key.hashValue.string)
+        }
         
-        public func save(data: Data, forKey key: String) -> AFResult<Void> { setData(data, forKey: key) }
+        public func save<Key: Hashable>(data: Data, forKey key: Key) -> AFResult<Void> {
+            setData(data, forKey: key.hashValue.string)
+        }
         
         @discardableResult
-        public func delete(key: String) -> AFResult<Void> { lock.execute { unsafeDelete(key) }}
+        public func delete<Key: Hashable>(key: Key) -> AFResult<Void> { lock.execute { unsafeDelete(key.hashValue.string) }}
         
         @discardableResult
         public func clear() -> AFResult<Void> {

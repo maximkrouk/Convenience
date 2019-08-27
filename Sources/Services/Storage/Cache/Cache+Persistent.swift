@@ -9,7 +9,7 @@ import Foundation
 
 public extension Storage.Cache {
     
-    class Persistent: StorageManager {
+    final class Persistent: StorageManager {
         private let lock = NSLock()
         private let fileManager = FileManager.default
         public var directory: URL {
@@ -22,9 +22,9 @@ public extension Storage.Cache {
             }
         }
         
-        public func data(forKey key: String) -> AFResult<Data> {
+        public func data<Key: Hashable>(forKey key: Key) -> AFResult<Data> {
             lock.execute {
-                guard let data = fileManager.contents(atPath: url(for: key).path) else {
+                guard let data = fileManager.contents(atPath: url(for: key.hashValue.string).path) else {
                     return .failure(PlainError("No data found for key: [\(key)]"))
                 }
                 return .success(data)
@@ -32,8 +32,9 @@ public extension Storage.Cache {
         }
 
         @discardableResult
-        public func save(data: Data, forKey key: String) -> AFResult<Void> {
+        public func save<Key: Hashable>(data: Data, forKey key: Key) -> AFResult<Void> {
             lock.execute {
+                let key = key.hashValue.string
                 unsafeDelete(key: key)
                 let path = url(for: key).path
                 let result = fileManager.createFile(atPath: path, contents: data, attributes: nil)
@@ -44,8 +45,8 @@ public extension Storage.Cache {
         }
         
         @discardableResult
-        public func delete(key: String) -> AFResult<Void> {
-            lock.execute { unsafeDelete(key: key) }
+        public func delete<Key: Hashable>(key: Key) -> AFResult<Void> {
+            lock.execute { unsafeDelete(key: key.hashValue.string) }
         }
 
         @discardableResult

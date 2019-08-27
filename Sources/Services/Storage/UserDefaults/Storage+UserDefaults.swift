@@ -39,20 +39,20 @@ public extension Storage {
             self.string = .init(storageManager: self)
         }
         
-        public func data(forKey key: String) -> AFResult<Data> {
-            guard let data = standard.data(forKey: key) else {
+        public func data<Key: Hashable>(forKey key: Key) -> AFResult<Data> {
+            guard let data = standard.data(forKey: key.hashValue.string) else {
                 return .failure(PlainError("No data found for key [\(key)]."))
             }
             return .success(data)
         }
         
-        public func save(data: Data, forKey key: String) -> AFResult<Void> {
-            standard.set(data, forKey: key)
+        public func save<Key: Hashable>(data: Data, forKey key: Key) -> AFResult<Void> {
+            standard.set(data, forKey: key.hashValue.string)
             return .success(())
         }
         
-        public func delete(key: String) -> AFResult<Void> {
-            standard.set(nil, forKey: key)
+        public func delete<Key: Hashable>(key: Key) -> AFResult<Void> {
+            standard.set(nil, forKey: key.hashValue.string)
             return .success(())
         }
     }

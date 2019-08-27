@@ -10,6 +10,7 @@ import Foundation
 public extension Storage {
     
     class Provider<T: BinaryConvertable>: StorageProvider {
+        
         public typealias Value = T
         
         public var dataProvider: Provider<Data> { .init(storageManager: manager) }
@@ -21,21 +22,21 @@ public extension Storage {
 
         // MARK: - Deprecated getters and setters
         @available(*, deprecated, message: "Use get(for:) method or subscript instead.")
-        public func get(forKey key: String) -> Value? {
+        public func get<Key: Hashable>(forKey key: Key) -> Value? {
             guard let data = manager.data(forKey: key).value else { return nil }
             return Value(from: data)
         }
 
         @available(*, deprecated, message: "Use get(for:) method or subscript instead.")
         @discardableResult
-        public func set(_ value: Value?, forKey key: String) -> AFResult<Void> {
+        public func set<Key: Hashable>(_ value: Value?, forKey key: Key) -> AFResult<Void> {
             guard let data = value?.data else { return manager.delete(key: key) }
             return manager.save(data: data, forKey: key)
         }
         
         @available(*, deprecated, message: "Use delete(for:) method instead.")
         @discardableResult
-        public func delete(forKey key: String) -> AFResult<Void> { manager.delete(key: key) }
+        public func delete<Key: Hashable>(forKey key: Key) -> AFResult<Void> { manager.delete(key: key) }
     }
     
 }
