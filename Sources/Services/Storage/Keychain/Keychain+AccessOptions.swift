@@ -8,7 +8,7 @@
 import Foundation
 import Security
 
-public extension Storage.Keychain {
+public extension Storage.Keychain.Manager {
 
     /// Options, used to determine keychain item access. The default value is accessibleWhenUnlocked.
     enum AccessOption {

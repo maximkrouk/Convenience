@@ -30,14 +30,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let item = Storage.Cache.persistent.bool[.bool].unwrap()
         modify(label) {
             view.addSubview($0)
             $0.frame = view.frame
-            $0.text = item ? "true" : "false"
+            $0.text = true ? "true" : "false"
         }
-        Storage.Cache.persistent.bool[.bool] = !item
     }
 
     override func didReceiveMemoryWarning() {

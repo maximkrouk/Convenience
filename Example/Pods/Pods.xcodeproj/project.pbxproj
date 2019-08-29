@@ -15,11 +15,14 @@
 		CE0684C822F9620700D991F7 /* NSLock+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0684C722F9620700D991F7 /* NSLock+Extension.swift */; };
 		CE1014A123142F9500BDAA55 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1014A023142F9500BDAA55 /* Cast.swift */; };
 		CE51B66D22FAE91E00234F52 /* Regex+Descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */; };
+		CE59577A2315580300EC8149 /* UserDefaults+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5957792315580300EC8149 /* UserDefaults+Manager.swift */; };
+		CE59577C23155F5300EC8149 /* Cache+Optimized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59577B23155F5300EC8149 /* Cache+Optimized.swift */; };
 		CED25D9422F83FD9003B44BA /* Validator+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9322F83FBD003B44BA /* Validator+String.swift */; };
 		CED25D9822F84E8E003B44BA /* Storage+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */; };
 		CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25DA022F85BAA003B44BA /* Storage+Cache.swift */; };
 		CED25DA322F87522003B44BA /* Cache+Temporary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25DA222F87522003B44BA /* Cache+Temporary.swift */; };
 		CED25DA522F8754B003B44BA /* Cache+Persistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED25DA422F8754B003B44BA /* Cache+Persistent.swift */; };
+		CEE802CF231544F600488E99 /* Keychain+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE802CE231544F600488E99 /* Keychain+Manager.swift */; };
 		CF65C6F113441D2EA3B72BAFC248EE86 /* Pods-Convenience_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E14C60D9FA4AB212C34D0F4530CA896F /* Pods-Convenience_Tests-dummy.m */; };
 		D54FF992492F25CC4A053BBE17F62A52 /* Convenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9759FDFA398CC8DC0A59765966C5848 /* Convenience-dummy.m */; };
 		D6E9597D49B911F93870BBAFB1F8EDA5 /* Pods-Convenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +106,8 @@
 		CE0684C722F9620700D991F7 /* NSLock+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLock+Extension.swift"; sourceTree = "<group>"; };
 		CE1014A023142F9500BDAA55 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		CE51B66C22FAE91E00234F52 /* Regex+Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Regex+Descriptor.swift"; sourceTree = "<group>"; };
+		CE5957792315580300EC8149 /* UserDefaults+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Manager.swift"; sourceTree = "<group>"; };
+		CE59577B23155F5300EC8149 /* Cache+Optimized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Optimized.swift"; sourceTree = "<group>"; };
 		CEA54A8F22FDEDF500AFA476 /* .xcodebuild.tests.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = .xcodebuild.tests.sh; sourceTree = "<group>"; };
 		CEA54A9022FDEDF500AFA476 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		CED25D9322F83FBD003B44BA /* Validator+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validator+String.swift"; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 		CED25DA022F85BAA003B44BA /* Storage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storage+Cache.swift"; sourceTree = "<group>"; };
 		CED25DA222F87522003B44BA /* Cache+Temporary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Temporary.swift"; sourceTree = "<group>"; };
 		CED25DA422F8754B003B44BA /* Cache+Persistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cache+Persistent.swift"; sourceTree = "<group>"; };
+		CEE802CE231544F600488E99 /* Keychain+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Manager.swift"; sourceTree = "<group>"; };
 		CEF8FE52319CDAE156429728FDCF9C5D /* Pods-Convenience_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Convenience_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D27219376A6A229ECC135C0DE0E4490A /* Pods-Convenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Convenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC41746E1399C475380E3247859C9ED /* Convenience.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Convenience.xcconfig; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				CED25D9722F84E8E003B44BA /* Storage+UserDefaults.swift */,
+				CE5957792315580300EC8149 /* UserDefaults+Manager.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -328,6 +335,7 @@
 				CED25DA022F85BAA003B44BA /* Storage+Cache.swift */,
 				CED25DA222F87522003B44BA /* Cache+Temporary.swift */,
 				CED25DA422F8754B003B44BA /* Cache+Persistent.swift */,
+				CE59577B23155F5300EC8149 /* Cache+Optimized.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -490,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				E17E86F822F656D700102D0E /* Storage+Keychain.swift */,
+				CEE802CE231544F600488E99 /* Keychain+Manager.swift */,
 				E17E86F722F656D700102D0E /* Keychain+Constants.swift */,
 				E17E86F922F656D700102D0E /* Keychain+AccessOptions.swift */,
 				E17E86FB22F656D700102D0E /* Keychain+Result.swift */,
@@ -778,6 +787,7 @@
 				CE1014A123142F9500BDAA55 /* Cast.swift in Sources */,
 				E133532F23130AEB00154DA5 /* Bool+BinaryConvertable.swift in Sources */,
 				E1303AA322F777A100DE9CAC /* LosslessStringConvertible+Extension.swift in Sources */,
+				CE59577C23155F5300EC8149 /* Cache+Optimized.swift in Sources */,
 				E17E870422F657DD00102D0E /* Bool+Extension.swift in Sources */,
 				E17E870122F6570200102D0E /* CF+Extension.swift in Sources */,
 				CED25DA522F8754B003B44BA /* Cache+Persistent.swift in Sources */,
@@ -795,6 +805,7 @@
 				E17E86CD22F5A64500102D0E /* Storage.swift in Sources */,
 				E1303AA122F776EE00DE9CAC /* NSRegularExpresson+Extension.swift in Sources */,
 				E1F82EAD22F395FB008C2D13 /* Operators.swift in Sources */,
+				CE59577A2315580300EC8149 /* UserDefaults+Manager.swift in Sources */,
 				E17E86FE22F656D700102D0E /* Keychain+AccessOptions.swift in Sources */,
 				CE51B66D22FAE91E00234F52 /* Regex+Descriptor.swift in Sources */,
 				E15E1E7D22F78BF0003AEBAA /* String+Extension.swift in Sources */,
@@ -802,6 +813,7 @@
 				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,
 				E1C5114C22FED151009C5D6A /* Error+Extension.swift in Sources */,
 				E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */,
+				CEE802CF231544F600488E99 /* Keychain+Manager.swift in Sources */,
 				CED25DA122F85BAA003B44BA /* Storage+Cache.swift in Sources */,
 				E116409822FA156600FE2E8D /* AnyValidator.swift in Sources */,
 				E1B24BC52312AFB8005C349F /* Modification.swift in Sources */,

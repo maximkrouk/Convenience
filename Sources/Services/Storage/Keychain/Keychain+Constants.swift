@@ -8,7 +8,7 @@
 import Foundation
 import Security
 
-public extension Storage.Keychain {
+public extension Storage.Keychain.Manager {
     
     /// Constants used by the library
     struct Constants {

@@ -8,7 +8,7 @@
 import Foundation
 import Security
 
-public extension Storage.Keychain {
+public extension Storage.Keychain.Manager {
     
     struct Result {
         /// Result code. Equal to noErr (0) if operation succeed.
@@ -22,7 +22,11 @@ public extension Storage.Keychain {
         }
         
         public var isSuccess: Bool { code == noErr }
-        public var afResult: AFResult<Void> { isSuccess ? .success(()) : .failure(Storage.Keychain.Error(code: code)) }
+        public var afResult: AFResult<Void> {
+            isSuccess ?
+                .success(()) :
+                .failure(Storage.Keychain.Manager.Error(code: code))
+        }
     }
     
 }

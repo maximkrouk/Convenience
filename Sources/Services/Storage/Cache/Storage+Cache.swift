@@ -7,13 +7,22 @@
 
 import Foundation
 
+public extension Storage.Cache {
+    
+    /// Specifies a place where data will be stored.
+    enum Kind {
+        case memory
+        case storage
+        //case optimized(for: Any.Type)
+        case managed(by: StorageManager)
+    }
+    
+}
+
 public extension Storage {
     
-    final class Cache {
+    struct Cache {
         public let kind: Kind
-        
-        public static let temporary = Cache(.memory)
-        public static let persistent = Cache(.storage)
         
         /// Use this instance to store and access Data keychain items.
         private(set) public var data: Provider<Data>!
@@ -31,7 +40,8 @@ public extension Storage {
                 manager = Temporary()
             case .storage:
                 manager = Persistent()
-            case let .custom(storageManager):
+//            case let .optimized(for: type):
+            case let .managed(by: storageManager):
                 manager = storageManager
             }
             self.kind   =  kind
@@ -39,27 +49,6 @@ public extension Storage {
             self.bool   = .init(storageManager: manager)
             self.string = .init(storageManager: manager)
         }
-    }
-    
-}
-
-public extension Storage.Cache {
-    
-    /// Specifies a place where data will be stored.
-    enum Kind {
-        case memory
-        case storage
-        case custom(StorageManager)
-    }
-    
-}
-
-extension Storage.Cache {
-    
-    /// A wrapper for data.
-    class Item {
-        var content: Data
-        init(content: Data) { self.content = content }
     }
     
 }

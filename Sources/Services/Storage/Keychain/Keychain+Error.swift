@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Storage.Keychain {
+extension Storage.Keychain.Manager {
     
     struct Error: Swift.Error {
         let code: OSStatus?

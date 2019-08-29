@@ -36,3 +36,13 @@ public extension Storage.Cache {
     }
     
 }
+
+extension Storage.Cache.Temporary {
+    
+    /// A wrapper for data.
+    class Item {
+        var content: Data
+        init(content: Data) { self.content = content }
+    }
+    
+}

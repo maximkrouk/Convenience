@@ -10,12 +10,10 @@ import Foundation
 public extension Storage {
     
     class Provider<T: BinaryConvertable>: StorageProvider {
-        
         public typealias Value = T
         
-        public var dataProvider: Provider<Data> { .init(storageManager: manager) }
+        private let manager: StorageManager
         
-        private(set) public var manager: StorageManager
         public init(storageManager: StorageManager) {
             self.manager = storageManager
         }
