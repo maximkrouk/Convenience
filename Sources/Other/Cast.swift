@@ -9,11 +9,7 @@ import Foundation
 
 public func usnafeCast<T>(_ object: Any, to type: T.Type) -> T! { cast(object, to: type) }
 
-public func cast<T>(_ object: Any, default defaultValue: @autoclosure () -> T) -> T {
-    cast(object, to: T.self, default: defaultValue())
-}
-
-public func cast<T>(_ object: Any, to type: T.Type, default defaultValue: @autoclosure () -> T) -> T {
+public func cast<T>(_ object: Any, to type: T.Type = T.self, default defaultValue: @autoclosure () -> T) -> T {
     cast(object, to: type).unwrap(default: defaultValue())
 }
 

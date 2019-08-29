@@ -22,7 +22,13 @@ public extension Optional {
     ///
     /// - Parameter default: the type to which the caller will be casted to.
     /// - Returns: casted caller or default if the caller was nil or not castable.
-    func cast<T>(default defaultValue: @autoclosure () -> T) -> T { self as? T ?? defaultValue() }
+    func cast<T>(to type: T.Type = T.self, default defaultValue: @autoclosure () -> T) -> T? { self.cast(to: T.self).unwrap(default: defaultValue()) }
+    
+    /// Safely casts the caller to specified type.
+    ///
+    /// - Parameter default: the type to which the caller will be casted to.
+    /// - Returns: casted caller or default if the caller was nil or not castable.
+    func cast<T>(to type: T.Type) -> T? { self as? T }
     
     /// Unwraps optional value or default value unwrap failed.
     func unwrap(default defaultValue: @autoclosure () -> Wrapped) -> Wrapped { self ?? defaultValue() }
