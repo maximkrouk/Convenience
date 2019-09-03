@@ -37,6 +37,7 @@
 		E133532D23130A8000154DA5 /* Data+BinaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133532C23130A8000154DA5 /* Data+BinaryConvertable.swift */; };
 		E133532F23130AEB00154DA5 /* Bool+BinaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133532E23130AEB00154DA5 /* Bool+BinaryConvertable.swift */; };
 		E15E1E7D22F78BF0003AEBAA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E1E7C22F78BF0003AEBAA /* String+Extension.swift */; };
+		E175D05B231D3A5B00825A22 /* String+Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E175D05A231D3A5B00825A22 /* String+Crypto.swift */; };
 		E17C16A922F59381005BA34A /* AFResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C16A822F59380005BA34A /* AFResult.swift */; };
 		E17C16AF22F59429005BA34A /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C16AE22F59429005BA34A /* RawRepresentable.swift */; };
 		E17E86CD22F5A64500102D0E /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E86CC22F5A64500102D0E /* Storage.swift */; };
@@ -132,6 +133,7 @@
 		E133532E23130AEB00154DA5 /* Bool+BinaryConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+BinaryConvertable.swift"; sourceTree = "<group>"; };
 		E14C60D9FA4AB212C34D0F4530CA896F /* Pods-Convenience_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Convenience_Tests-dummy.m"; sourceTree = "<group>"; };
 		E15E1E7C22F78BF0003AEBAA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E175D05A231D3A5B00825A22 /* String+Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Crypto.swift"; sourceTree = "<group>"; };
 		E17C16A822F59380005BA34A /* AFResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFResult.swift; sourceTree = "<group>"; };
 		E17C16AE22F59429005BA34A /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
 		E17E86CC22F5A64500102D0E /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			children = (
 				E15E1E7C22F78BF0003AEBAA /* String+Extension.swift */,
 				E133532A23130A6100154DA5 /* String+BinaryConvertable.swift */,
+				E175D05A231D3A5B00825A22 /* String+Crypto.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				E17E86FE22F656D700102D0E /* Keychain+AccessOptions.swift in Sources */,
 				CE51B66D22FAE91E00234F52 /* Regex+Descriptor.swift in Sources */,
 				E15E1E7D22F78BF0003AEBAA /* String+Extension.swift in Sources */,
+				E175D05B231D3A5B00825A22 /* String+Crypto.swift in Sources */,
 				E17E86D922F6271E00102D0E /* Storage+Provider.swift in Sources */,
 				E17E86FF22F656D700102D0E /* Keychain+Error.swift in Sources */,
 				E1C5114C22FED151009C5D6A /* Error+Extension.swift in Sources */,
