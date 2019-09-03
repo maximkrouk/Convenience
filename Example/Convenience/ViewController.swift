@@ -19,22 +19,35 @@ fileprivate extension StorageProvider {
 }
 
 class ViewController: UIViewController {
+
+    let storage = Storage.Cache(.storage(id: .none)).bool!
     
     enum Key: String {
         case bool = "ViewController.Key.bool"
     }
     
-    private(set) public var label: UILabel = {
-        modification(of: .init()) { $0.textAlignment = .center }
+    private(set) public var button: UIButton = {
+        modification(of: .init()) {
+            $0.addTarget(self, action: #selector(update), for: .touchUpInside)
+        }
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        modify(label) {
+        modify(button) {
             view.addSubview($0)
             $0.frame = view.frame
-            $0.text = true ? "true" : "false"
+            $0.setTitleColor(.red, for: .normal)
         }
+        update()
+    }
+    
+    @objc func update() {
+        let item = storage[.bool].unwrap(default: false)
+        modify(button) {
+            $0.setTitle(item ? "true" : "false", for: .normal)
+        }
+        storage[.bool] = !item
     }
 
     override func didReceiveMemoryWarning() {

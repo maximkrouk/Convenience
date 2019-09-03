@@ -12,7 +12,7 @@ public extension Storage.Cache {
     /// Specifies a place where data will be stored.
     enum Kind {
         case memory
-        case storage
+        case storage(id: String? = .none)
         //case optimized(for: Any.Type)
         case managed(by: StorageManager)
     }
@@ -38,8 +38,8 @@ public extension Storage {
             switch kind {
             case .memory:
                 manager = Temporary()
-            case .storage:
-                manager = Persistent()
+            case let .storage(id: group):
+                manager = Persistent(group)
 //            case let .optimized(for: type):
             case let .managed(by: storageManager):
                 manager = storageManager
