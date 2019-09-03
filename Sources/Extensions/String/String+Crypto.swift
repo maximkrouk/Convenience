@@ -26,10 +26,6 @@ public extension String {
     }
     
     var md5: String? {
-        if #available(iOS 13.0, *) {
-            let _ = Insecure.MD5.hash(data: Data())
-        } else {
-        }
         guard var data = data(using: .utf8) else { return nil }
         var hash = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
         CC_MD5(&data, CC_LONG(data.count), &hash)
