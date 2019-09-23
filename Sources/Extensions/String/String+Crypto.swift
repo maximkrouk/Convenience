@@ -6,7 +6,6 @@
 //
 
 import CommonCrypto
-import CryptoKit
 
 public extension String {
     
