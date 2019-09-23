@@ -2,7 +2,7 @@
 
 **The most convenient framework for your apps.**
 
-[![CI Status](https://img.shields.io/travis/mx-cat/Convenience.svg?style=flat)](https://travis-ci.org/mx-cat/Convenience) [![Version](https://img.shields.io/cocoapods/v/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![License](https://img.shields.io/cocoapods/l/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![Platform](https://img.shields.io/cocoapods/p/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience)
+[![CI Status](https://img.shields.io/travis/maximkrouk/Convenience.svg?style=flat)](https://travis-ci.org/mx-cat/Convenience) [![Version](https://img.shields.io/cocoapods/v/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![License](https://img.shields.io/cocoapods/l/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience) [![Platform](https://img.shields.io/cocoapods/p/Convenience.svg?style=flat)](https://cocoapods.org/pods/Convenience)
 
 ## The story
 
