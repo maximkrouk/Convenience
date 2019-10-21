@@ -6,7 +6,7 @@
 
 ## The story
 
-Programming is all about data. We modify data, store it, share it. You can see it in every app you do. So I've got enaugh writing the same code for decoding and storing data, unwrapping optionals, subscripting collections and decided to... Use one folder called "Reusable" with all this stuff. And migrate it from project to project...
+Programming is all about data. We modify data, store it, share it. You can see it in every app you do. So I've got enaugh writing the same code for decoding data, unwrapping optionals, subscripting collections and decided to... Use one folder called "Reusable" with all this stuff. And migrate it from project to project...
 
 One day The Problem appeared. When you add anything to this folder in a new project, changes are not applied to the older ones. Xcode folder references could have solve this problem, but what if you have to work from remote and have no access to the folder?
 
@@ -14,141 +14,170 @@ So I decided to write this framework and share it with world. I'm gonna try make
 
 ## Usage
 
-### Storage
+### Bool
 
-Every type of storage:
+- __Toggle__
 
-- Has the same interface.
-- Extendable.
-- Thread safe.
+  `Bool().toggled == !Bool`
 
-#### Interface:
+  
 
-Any storage provided via managers is accessible as key-value pairs. You may use strings, but you'll be getting warnings, because I deprecated this approach. Natively the framework advices you to use string based enums.
+### CharacterSet
 
-In exaples I'll be using this:
+- __ExpressibleByStringLiteral__
 
-```swift
-enum Auth: String {
-    case username // .rawValue == "username"
-    case isAdmin  // .rawValue == "isAdmin"
-}
-```
+  `let frameworkName = "Convenience" // == CharacterSet(charactersIn: "Convenience")`
 
-Avalible **Managers:**
+- __Static factory__
 
-- `Keychain`
+  `.binaryDigits`
 
-  _Shortcut: KC_
+  `.hexDigits`
 
-- `UserDefaults`
+  
 
-  _Shortcut: UD_
+### Codable
 
-- `Cache` [temporary / persistent]
+- __Convenient coding__
 
-  _Shortcut: CH_
+  `Encodable.encode(using encoder: ConvenientEncoder = JSONEncoder())`
 
-You can easily extend Avalible managers with your own, for example **Database:**
+  `Decodable.decode(from data: Data, using encoder: ConvenientEncoder = JSONEncoder())`
 
-```
-Example will be here. (or somewhere else, for now just a placeholder) c:
-```
 
-You should access any storage via providers. You may use them as static or singleton's properties.
 
-- `Storage.[Manager].[Provider]`
-- `Storage.[Manager].default.[Provider]`
+### Collection
 
-Out-of-the-box **Providers:**
+- __Safe subscripting__
 
-- `.data`
-- `.bool`
-- `.string`
+  `[1 ,2, 3][safe: 10] == nil`
 
-_(More will be provided soon)_
+- __Int-ranged subscripting__ _for bidirectional collecions_
 
-**Providers** allow you to access storage:
+  `"String"[0] == "S"`
 
-- Via subscripts:
-  - `provider[key]`
-- Via methods:
-  - `provider.get(for: key)`
-  - `provider.set(value, for: key)`
-- Via deprecated subscripts and methods:
-  - `provider[stringKey]`
-  - `provider.get(forKey: stringKey)`
-  - `provider.set(value, forKey: stringKey)`
+  `"String"[1..<3] == "tr"`
 
-For convenience it would be nice to extend framework's `Storage.Provider` with your custom adapter subscripts:
+  `"String"[3...] == "ing"`
 
-```swift
-extension Storage.Provider {
-    subscript(key: Auth) -> Value? {    // Value is a Provider's assosiated type.
-        get { get(for: key) }           // Just pass key to build-in getter,
-        set { set(newValue, for: key) } // or key-value to build in setter.
-    }
-}
-```
+  ...
 
-This will allow you to access storage not just like this:
+  
 
-- `Storage.[Manager].[Provider][Auth.username]`
+### Colors
 
-but also like this:
+- __Hex color converting__ _for NS and UI Colors_
 
-- `Storage.[Manager].[Provider][.username]`
+  `[NS/UI]Color(hex: "#FA6878AA")`
 
-#### Keychain as an example:
+  `[NS/UI]Color(hex: "#FA6878")`
 
-- `Storage.Keychain.data.set(nil, forKey: "deletedItem")`
-- `Storage.Keychain.data.get(forKey: "deletedItem") // nil`
-- `Storage.Keychain.data["StringKeys"] = "Sucks c:".data(using: .utf8)`
-- `Storage.Keychain.default.string[.username] = "Root"`
-- `Storage.Keychain.default.bool[.isAdmin] = true`
-- `Storage.KC.bool[.isAdmin] // true`
+  `[NS/UI]Color(hex: "FA6878")`
 
-### Validators
+  `[NS/UI]Color(rgb: 0xfa6878ff)` _( from hex Int )_
 
-For any validations you may specify your own validators by using `Validator<Value>` struct, which implements `AnyValidator` protocol. For that you should initialize it with a validation condition:
+  `[NS/UI]Color(rgb: 0xFA6878)`
 
-```swift
-let redViewValidator = Validator<UIView>(condition : { view in
-    view.backgroundColor == .red ? 
-        .success(()) :
-        .failure(PlainError("Passed view is not red."))
-})
-```
 
-The framework provides string validators out of the box:
 
-```swift
-typealias StringValidator = Validator<String>
-```
+### Data
 
-It may be initialized with regex:
+- __Decoding__
 
-```swift
-let emailValidator = StringValidator(regex: .email)
-let hexColorValidator = StringValidator(regex: .color, failureDescription: "It wasn't the hex color string!")
-```
+  ```swift
+  let decoding = Data().decode(to: SomeDecodable.self)
+  decoding.value // SomeDecodable?
+  switch decoding {
+      case .success(let value):
+      	  return value // SomeDecodable
+      case .failure(let error):
+        	vc.showAlert(with: error) // for ex.
+  }
+  ```
 
-To perform validation call `.validate(value)`
+- __Getting a string__
 
-```
-emailValidator.validate("some.cool.email@example.co.uk") // .success
-emailValidator.validate("#058FA2") // .failure("Regex match failed.")
-```
+  `Data().string(using: .ascii)`
+
+  `Data().string()` _(UTF-8)_
+
+
+
+### Error
+
+- __Collect__
+
+  ```swift
+  // for now works only for () -> Void funtions
+  func someThrowable() throws {}
+  
+  let errors: ErrorBag = Error.collect {
+  		someThrowable
+  		someThrowable
+  		someThrowable
+  }
+  /* ==
+  collect {
+  		someThrowable
+  		someThrowable
+  		someThrowable
+  }
+  */
+  
+  print(errors.localizedDescription)
+  // ==
+  errors.contents.forEach {  
+  	  print($0.localizedDescriprion)
+  }
+  ```
+
+  
+
+### Optional
+
+- __Example__
+
+  ```swift
+  let a: Int? = 1 						 // a == 1
+  a.isNil				 							 // false
+  a.release() 								 // a == nil
+  a.isNil				 							 // true
+  let b = a.unwrap(default: 3) // a == nil, b == 3
+  let c: SomeProtocol? = SomeInstance()
+  let d = c.cast(to: SomeInstance.self, default: SomeInstance())
+  ```
+
+  
+
+### NSLock
+
+### NSRegularExpression (Regex)
+
+### RawRepresentable
+
+### Cast
+
+### Modifications
+
+### String (ns, url, regex, crypto)
+
+### Protocols (TypeErasable, StaticNamedType)
+
+### PlainError
 
 ----
 
-_(Working on new features and xcode docs, github documentation will be provided later.)_
+_( + Working on new features and xcode docs (guess 90% done), github documentation will be provided later.)_
 
 ## Requirements
 
 - 📱	iOS 8.0+
 
 ## Installation
+
+#### SwiftPM
+
+#### CocoaPods
 
 __Convenience__ is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
