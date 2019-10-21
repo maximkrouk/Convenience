@@ -87,6 +87,8 @@ public extension Optional where Wrapped == Float {
 }
 
 #if os(iOS)
+import UIKit
+
 public extension Optional where Wrapped == CGFloat {
     
     /// Safely unwraps CGFloat value.
