@@ -48,4 +48,10 @@ public extension BidirectionalCollection {
         suffix(Swift.max(0, count - range.lowerBound))
     }
     
+    func chunked(into size: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
+        }
+    }
+    
 }

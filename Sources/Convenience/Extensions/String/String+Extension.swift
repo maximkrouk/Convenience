@@ -15,6 +15,9 @@ public extension String {
     /// Returns NSString initialized with self.
     var nsString: NSString { NSString(string: self) }
     
+    /// Data using UTF-8 encoding.
+    func data() -> Data? { data(using: .utf8) }
+    
     /// Returns Regex initialized with self and options.
     func regex(_ options: Regex.Options = []) -> Regex { Regex(self, options: options) }
     
