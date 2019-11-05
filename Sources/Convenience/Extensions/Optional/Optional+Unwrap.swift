@@ -34,6 +34,14 @@ public extension Optional {
     /// Unwraps optional value or default value unwrap failed.
     func unwrap(default defaultValue: @autoclosure () -> Wrapped) -> Wrapped { self ?? defaultValue() }
     
+    /// Extracts the value or throws the error
+    ///
+    /// - Parameter error: Error which is thown if self was nil
+    func extract(orThrow error: Error) throws -> Wrapped {
+        guard let value = self else { throw error }
+        return value
+    }
+    
 }
 
 public extension Optional where Wrapped: StringProtocol {
@@ -117,5 +125,11 @@ public extension Optional where Wrapped: Sequence & ExpressibleByArrayLiteral {
     /// - Parameter default: default sequence object to return if the caller is nil. Empty array if not specified.
     /// - Returns: unwrapped sequence or default if the caller was nil.
     func unwrap(default defaultValue: @autoclosure () -> Wrapped = { [] }()) -> Wrapped { self ?? defaultValue() }
+    
+}
+
+public extension Optional where Wrapped: Collection {
+    
+    var isEmpty: Bool { self?.isEmpty ?? false }
     
 }

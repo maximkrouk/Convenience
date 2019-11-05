@@ -313,4 +313,10 @@ public extension Result {
     /// Returns error?.bag.
     var errorBag: ErrorBag? { error?.bag }
     
+    /// Extracts value or throws an error.
+    func extract() throws -> Value {
+        guard let value = value else { throw error! }
+        return value
+    }
+    
 }
