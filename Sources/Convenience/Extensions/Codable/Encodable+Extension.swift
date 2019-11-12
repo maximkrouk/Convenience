@@ -17,7 +17,7 @@ extension Encodable {
 
 extension Decodable {
     
-    public func decode(from data: Data, using decoder: ConvenientDecoder = JSONDecoder()) throws -> Self {
+    public static func decode(from data: Data, using decoder: ConvenientDecoder = JSONDecoder()) throws -> Self {
         try decoder.decode(Self.self, from: data)
     }
     
