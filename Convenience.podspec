@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Convenience'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary      = 'The most swift framework for your apps.'
 
   s.description      =  <<-DESC
