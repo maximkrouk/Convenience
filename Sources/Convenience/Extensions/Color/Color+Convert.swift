@@ -17,15 +17,13 @@ public protocol Color {
 
 public protocol HSBColorConvertable: Color {
     
-    
-    
     var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) { get }
     
 }
 
 extension HSBColorConvertable {
     
-    var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
+    public var hsba: (h: CGFloat, s: CGFloat, b: CGFloat, a: CGFloat) {
         let value = self.rgba
         let minV = min(value.red, value.green, value.blue)
         let maxV = max(value.red, value.green, value.blue)
@@ -82,11 +80,11 @@ extension HexColorConvertable {
                   alpha : CGFloat(value & 0x000000ff) / 255)
     }
         
-    public static func hex(_ value: String) -> Self? { .init(hex: value) }
+    public static func hex(_ value: String) -> Self? { Self.init(hex: value) }
         
-    public static func hex(rgb value: Int) -> Self? { .init(rgb: value) }
+    public static func hex(rgb value: Int) -> Self? { Self.init(rgb: value) }
         
-    public static func hex(rgba value: Int) -> Self? { .init(rgba: value) }
+    public static func hex(rgba value: Int) -> Self? { Self.init(rgba: UInt32(value)) }
     
 }
 
